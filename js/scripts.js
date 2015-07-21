@@ -39,7 +39,7 @@ $(function(){
 	
 
 	// coddy 
-	$('.other .peppermint, .clnts .peppermint').slider3();
+	$('.other .peppermint, .clnts .peppermint, .js-news__slider').slider3();
 	$('.js-tabs').lightTabs();
 	ajaxMoreBlocks();
 				
