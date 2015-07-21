@@ -35,6 +35,7 @@ $(function(){
 	fancy();
 	clients();
 	rc();
+	leftMenu();
 	
 
 	// coddy 
@@ -481,6 +482,31 @@ $(function(){
 			});			
 	      return false;
 	     });
+	}
+
+
+	function leftMenu(){
+		$('.leftmenu li').each(function(){
+				$(this).attr('data-level', ($(this).parents('ul').length));
+			});
+			
+			
+			$('.leftmenu a').click(function(e){
+				e.preventDefault();
+				var $p = $(this).closest('li');
+				if (!$p.find('ul').length) {location.href = $(this).attr('href');}
+				
+				if (!$p.hasClass('active')) {
+					var level = $p.attr('data-level');
+					$('.active[data-level="'+level+'"]').slideUp(200);
+					$p.addClass('active');
+					$p.find('> ul').slideDown(200);
+				}
+				else {
+					$p.removeClass('active');
+					$p.find('> ul').slideUp(200);
+				}
+			});
 	}
 		
 });
