@@ -37,8 +37,8 @@ $(function(){
 	rc();
 	
 
-	// $('.other .peppermint, .clnts .peppermint').slider3();
 	// coddy 
+	$('.other .peppermint, .clnts .peppermint').slider3();
 	ajaxMoreBlocks();
 				
 	
@@ -485,13 +485,13 @@ $(function(){
 		
 });
 
-// (function($){
-// 	$.fn.slider3 = function(){
-// 		var slider = $(this);
+(function($){
+	$.fn.slider3 = function(){
+		var slider = $(this);
 
-// 		slider.Peppermint({
-// 			slideshow: false,
-// 			dots: true
-// 		});
-// 	}
-// })(jQuery);
+		slider.Peppermint({
+			slideshow: false,
+			dots: true
+		});
+	}
+})(jQuery);
