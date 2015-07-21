@@ -40,6 +40,7 @@ $(function(){
 
 	// coddy 
 	$('.other .peppermint, .clnts .peppermint').slider3();
+	$('.js-tabs').lightTabs();
 	ajaxMoreBlocks();
 				
 	
@@ -358,7 +359,7 @@ $(function(){
 	var tags = new Tags();
 	
 	function setEqualHeights() {	
-		var elements = [$('.prj-item')], 
+		var elements = [$('.prj-item, .prjsmain-item')], 
 				max = 0;
 		
 		for (var i = 0; i<elements.length; ++i) {
@@ -382,16 +383,16 @@ $(function(){
 	};
 	
 	function clients() {		
-		$('.clients-cats a').on('click', function(e){
+		$('.js-tabs-client__list a').on('click', function(e){
 			e.preventDefault();
 			
-			$('.clients-cats a').removeClass('active');
+			$('.js-tabs-client__list a').removeClass('active');
 			$(this).addClass('active');
 			
 			var group = $(this).attr('href').replace('#', '');
-			if (group == 'all') {$('.client').show();}
+			if (group == 'all') {$('.js-tabs-client__rel').show();}
 			else {
-				$('.client').hide();
+				$('.js-tabs-client__rel').hide();
 				$('[rel="'+group+'"]').show();
 				}
 		});		
@@ -520,4 +521,35 @@ $(function(){
 			dots: true
 		});
 	}
+})(jQuery);
+
+
+
+(function($){				
+    jQuery.fn.lightTabs = function(options){
+
+        var createTabs = function(){
+            tabs = this;
+            i = 0;
+            
+            showPage = function(i){
+                $(tabs).children("div").children("div").hide();
+                $(tabs).children("div").children("div").eq(i).show();
+                $(tabs).children("ul").children("li").removeClass("active");
+                $(tabs).children("ul").children("li").eq(i).addClass("active");
+            }
+                                
+            showPage(0);				
+            
+            $(tabs).children("ul").children("li").each(function(index, element){
+                $(element).attr("data-page", i);
+                i++;                        
+            });
+            
+            $(tabs).children("ul").children("li").click(function(){
+                showPage(parseInt($(this).attr("data-page")));
+            });				
+        };		
+        return this.each(createTabs);
+    };	
 })(jQuery);
