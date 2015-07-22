@@ -2848,6 +2848,8 @@ ul.history__tabs-list:after{
   color: #000;
   line-height: 82px;
   background-color: #fff;
+  position: absolute;
+  bottom: 0;
 }
 .footer__min:after{
 	background-color: transparent;
