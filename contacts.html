@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+	
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0">
+		<title>Контакты :: Computel</title>
+		   
+		<link href="css/styles.css" rel="stylesheet" type="text/css" />
+		<link href="css/mobile.css" rel="stylesheet" type="text/css" />
+
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/plugins/plugins.js"></script>
+		<script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script> 
+		<script src="js/scripts.js"></script>
+	</head>
+	
+	<body>
+		<div id="all">
+			<div id="wrap">
+				<header class="header">
+					<div class="inside">
+						<div class="header-logo logo"><a href="links.html"><img src="img/logo.png" alt="logo" width="129" height="48" class="logo-img" /></a>
+						</div>
+						<div class="header-menu mainmenu">
+							<div class="mainmenu-closer"></div>
+							<div class="mainmenu-link"><a class="mainmenu-text" href="#">Решения и услуги</a>
+								<div class="submenu">
+									<a href="#" class="submenu-link"><span><em>Управления данными и бизнес приложения</em></span></a>
+									<a href="#" class="submenu-link"><span><em>ИТ-инфраструктура</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Информационная безопасность</em></span></a>
+									<a href="#" class="submenu-link"><span><em>ИТ-безопасность для банков</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Системы связи и телекоммуникаций</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Инженерные системы</em></span></a>
+									<a href="#" class="submenu-link"><span><em>ИТ-услуги</em></span></a>
+								</div>
+							</div>
+							<div class="mainmenu-link"><a class="mainmenu-text" href="#">Наш опыт</a>
+								<div class="submenu">
+									<a href="#" class="submenu-link"><span><em>Наш опыт</em></span></a>
+								</div>
+							</div>
+							<div class="mainmenu-link"><a class="mainmenu-text" href="#">Пресс-центр</a>
+								<div class="submenu">
+									<a href="#" class="submenu-link"><span><em>Новости</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Статьи и комментарии</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Профайл о компании</em></span></a>
+								</div>
+							</div>
+							<div class="mainmenu-link current"><a class="mainmenu-text" href="#">О компании</a>
+								<div class="submenu">
+									<a href="#" class="submenu-link"><span><em>О нас</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Технологические партнеры</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Заказчики</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Лицензии и сертификаты</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Стандарты качества</em></span></a>
+									<a href="#" class="submenu-link"><span><em>Карьера</em></span></a>
+								</div>
+							</div>
+							<div class="mainmenu-link"><a class="mainmenu-text" href="#">Контакты</a></div>
+						</div>
+						<div class="header-menuIcon"></div>
+						<div class="header-search search">
+							<form class="search-form">
+								<input class="search-input" placeholder="Поиск по сайту" type="text" />
+								<button class="search-button"></button><a class="search-close" href="#"></a>
+							</form>
+						</div>
+					</div>
+				</header>
+				<!--header-->
+			 
+						
+				<div class="main">
+
+					<section class="contacts">
+						<div class="contacts__map" id="mapContact"></div>
+						<!-- <div class="contacts__map-overlay"></div> -->
+						<div class="contacts__cont">
+							<h3><a href="#0">Бизнес-центр “Слободской”, 3-й этаж</a></h3>
+							<p>115280, Москва, м. «Автозаводская» улица Ленинская Слобода, дом 26, строение 28, </p>
+							<p class="phone">+7 (495) 640-30-10</p>
+							<p><a href="mailto:info@computel.ru">info@computel.ru</a></p>
+						</div>
+					</section>
+
+					<section class="contacts-info">
+						<div class="inside">
+							<div class="contacts__accord-cont js-head__accord closed metro">
+								<div class="contacts__accord-title">Как добраться <span class="place">на метро</span>
+									<ul class="contacts__accord-dropdown">
+										<li class="current" data-type="metro">На метро</li>
+										<li data-type="car">На машине</li>
+									</ul>
+								</div>
+
+								<div class="contacts__accord-subtitle">
+									<h6>Обращаем ваше внимание, что парковка на территории Бизнес-центра<br/> платная, 1 час – 50 рублей.</h6>
+									<p><a href="#0">Версия для печати</a> <span>3 Мб, pdf</span></p>
+								</div>
+
+								<div class="contacts__tab">
+									<div class="contacts__tab-cont metro__tab">
+										<div class="contacts__tab-tbl">
+											<div class="contacts__tab-cell">
+												<p>Выход в город из ст. метро «Автозаводская» - последний вагон из Центра.</p>
+												<p>В переходе из стеклянных дверей налево. Ориентир – Мебельный центр Roomer. </p>
+											</div>
+											<div class="contacts__tab-cell">
+												<p>Далее прямо по ул. Мастеркова до пересечения с ул. Ленинская Слобода. Следуйте прямо по ул. Восточная, затем поверните налево в Монастырский парк. Двигайтесь вдоль здания по левой стороне прямо до прохода к Храму Рождества Пресвятой Богородицы. </p>
+											</div>
+											<div class="contacts__tab-cell">
+												<p>Обойдите офисное здание слева и войдите через калитку в металлической ограде, пройдите к центральному входу в Бизнес-центр “Слободской”.</p>
+											</div>
+										</div>
+
+										<div class="contact__btn">
+											<a href="https://www.google.ru/maps/place/%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80,+%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB./@56.1376615,40.4134805,12z/data=!3m1!4b1!4m2!3m1!1s0x414c796abd574431:0xa5192737744ddb02?hl=ru" target="_blank" class="button">Показать на карте</a>
+										</div>
+									</div>
+
+									<div class="contacts__tab-cont car__tab">
+										<div class="contacts__tab-tbl">
+											<div class="contacts__tab-cell">
+												<p class="fsz15">Въезд со стороны Крутицкой набережной по направлению из центра.</p>
+												<p>За АЗС повернуть направо по указателю «Спортивный комплекс», далее по прямой до шлагбаума. Получить карточку на въезд и проехать к бизнес-центру «Слободской».</p>
+											</div>									
+											<div class="contacts__tab-cell">
+												<p class="fsz15">Въезд со стороны ул. Ленинская Слобода по направлению из центра.</p>
+												<p>В конце здания бизнес-центра ОМЕГА-2 с правой стороны проехать к шлагбауму. Получить карточку на въезд и проехать к бизнес-центру «Слободской».</p>
+											</div>
+										</div>
+
+										<div class="contact__btn">
+											<a href="https://www.google.ru/maps/place/%D1%83%D0%BB.+%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D0%A1%D0%BB%D0%BE%D0%B1%D0%BE%D0%B4%D0%B0,+26%D1%8128,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+115280/@55.712379,37.6540729,17z/data=!3m1!4b1!4m2!3m1!1s0x46b54b31776270b3:0x9a407ab871777fa?hl=ru" target="_blank" class="button">Показать на карте</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>						
+					</section>
+				</div>
+				<!-- main -->
+			</div>
+			<!--#wrap-->
+		</div>
+		<!--#all-->
+		<footer class="footer">
+			<div class="inside">
+				<div class="footer-col footer-col--0">
+					<div class="footer-col footer-col--1">
+						<div class="col-inside">
+							<h3><a href="#">О компании</a></h3>
+							<ul>
+								<li><a href="#">О нас</a>
+								</li>
+								<li><a href="#">Технологические партнеры</a>
+								</li>
+								<li><a href="#">Заказчики</a>
+								</li>
+								<li><a href="#">Лицензии и сертификаты</a>
+								</li>
+								<li><a href="#">Стандарты качества</a>
+								</li>
+								<li><a href="#">Карьера</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer-col footer-col--2">
+						<div class="col-inside">
+							<h3><a href="#">Пресс-центр</a></h3>
+							<ul>
+								<li><a href="#">Новости</a>
+								</li>
+								<li><a href="#">Статьи и комментарии</a>
+								</li>
+								<li><a href="#">Профайл о компании</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-col footer-col--3">
+					<div class="col-inside">
+						<h3><a href="#">Решения и услуги</a></h3>
+						<ul>
+							<li><a href="#">Управления данными<span class="noTablets"> и бизнес приложения</span></a>
+							</li>
+							<li><a href="#">ИТ-инфраструктура</a>
+							</li>
+							<li><a href="#">Информационная безопасность</a>
+							</li>
+							<li><a href="#">ИТ-безопасность для банков</a>
+							</li>
+							<li><a href="#">Системы связи<span class="noTablets"> и телекоммуникаций</span></a>
+							</li>
+							<li><a href="#">Инженерные системы</a>
+							</li>
+							<li><a href="#">ИТ-услуги</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="footer-col footer-col--4">
+					<div class="col-inside">
+						<div class="footer-contacts">
+							<div class="footer-tel">+7 (495) 640-30-10</div>
+							<div class="footer-email"><a href="mailto:info@computel.ru">info@computel.ru</a>
+							</div>
+							<div class="footer-address">Улица Ленинская Слобода, дом. 26, стр. 28 <a href="#">Бизнес-центр «Слободской»</a>,
+								3-й этаж</div>
+						</div>
+						<div class="footer-copy">
+							<div class="footer-company">
+								<img src="img/logo-footer.png" alt="logo-footer" width="113" height="42"
+								/><span>© 2002-2015 Computel</span>
+							</div>
+							<div class="footer-nikoland">Создание сайта — <a href="#">Студия Nikoland</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--footer-->
+	</body>
+	<!--body -->
+
+</html>

@@ -42,6 +42,8 @@ $(function(){
 	$('.other .peppermint, .clnts .peppermint, .js-news__slider').slider3();
 	$('.js-tabs').lightTabs();
 	ajaxMoreBlocks();
+	$('#mapContacts').mapContacts();
+	$('.js-head__accord').headAccordion();
 				
 	
 	function widthClasses() {
@@ -552,4 +554,88 @@ $(function(){
         };		
         return this.each(createTabs);
     };	
+})(jQuery);
+
+(function($){
+	$.fn.mapContacts = function(){
+		   google.maps.event.addDomListener(window, 'load', init);
+		    var map;
+		    function init() {
+		        var mapOptions = {
+		            center: new google.maps.LatLng(55.708867,37.654072900000074),
+		            zoom: 15,
+		            zoomControl: false,
+		            disableDoubleClickZoom: true,
+		            mapTypeControl: false,
+		            scaleControl: false,
+		            scrollwheel: false,
+		            panControl: false,
+		            streetViewControl: false,
+		            draggable : true,
+		            overviewMapControl: false,
+		            overviewMapControlOptions: {
+		                opened: false,
+		            },
+		            mapTypeId: google.maps.MapTypeId.ROADMAP,
+		            styles: [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.4}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}],
+		        }
+		        var mapElement = document.getElementById('mapContact');
+		        var map = new google.maps.Map(mapElement, mapOptions);
+		        var locations = [
+		['Бизнес-центр “Слободской”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.712379, 37.654072900000074, 'img/ico_07.png']
+		        ];
+		        for (i = 0; i < locations.length; i++) {
+					if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+					if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+					if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+		           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+		           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+		            marker = new google.maps.Marker({
+		                icon: markericon,
+		                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+		                map: map,
+		                title: locations[i][0],
+		                desc: description,
+		                tel: telephone,
+		                email: email,
+		                web: web
+		            });
+		link = '';     }
+
+		}
+	}
+})(jQuery);
+
+
+(function($){
+	$.fn.headAccordion = function(){
+		var $cont = this,
+			$btn = $('.place', $cont),
+			$dropdown = $('.contacts__accord-dropdown', $cont);
+
+			$('html').on('click', function(e){
+		      	$cont.addClass('closed').removeClass('opened');
+		    });
+
+			$btn.on('click', function(event){
+				event.stopPropagation();
+				if($cont.hasClass('closed')){
+					$cont.addClass('opened').removeClass('closed');
+				} else {
+					$cont.addClass('closed').removeClass('opened');
+				}
+			});
+
+			$dropdown.on('click', 'li:not(.current)', function(event){
+				var data = $(this).attr('data-type'),
+					text = $(this).text();
+
+					$dropdown.find('li.current').removeClass('current');
+					$(this).addClass('current');
+					$btn.text(text);
+
+					$cont.removeClass('car metro').addClass(data);
+			});
+
+	}
 })(jQuery);
