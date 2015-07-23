@@ -42,7 +42,9 @@ $(function(){
 	$('.other .peppermint, .clnts .peppermint, .js-news__slider').slider3();
 	$('.js-tabs').lightTabs();
 	ajaxMoreBlocks();
-	$('#mapContacts').mapContacts();
+	if($('#mapContact').length){
+		$('#mapContact').mapContacts();
+	}	
 	$('.js-head__accord').headAccordion();
 				
 	
