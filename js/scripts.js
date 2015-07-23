@@ -577,7 +577,7 @@ $(function(){
 		                opened: false,
 		            },
 		            mapTypeId: google.maps.MapTypeId.ROADMAP,
-		            styles: [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.4}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}],
+		            styles: [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-200},{"lightness":15},{"gamma":0.4}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}],
 		        }
 		        var mapElement = document.getElementById('mapContact');
 		        var map = new google.maps.Map(mapElement, mapOptions);
