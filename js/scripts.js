@@ -1,28 +1,4 @@
 $(function(){
-
-	var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-	var isFirefox = typeof InstallTrigger !== 'undefined'; 
-	var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
-	var isChrome = !!window.chrome && !isOpera;              
-	var isIE = /*@cc_on!@*/false || !!document.documentMode;
-	
-	var is_touch_device = 'ontouchstart' in document.documentElement;
-	var is_windows_touch = false;
-	if (navigator.userAgent.toLowerCase().indexOf("windows phone") != -1) {is_windows_touch = true;}
-	var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
-	
-	if (isOpera) {$('html').addClass('opera')}
-	if (isFirefox) {$('html').addClass('ff')}
-	if (isSafari) {$('html').addClass('safari')}
-	if (isChrome) {$('html').addClass('chrome')}
-	if (isIE) {$('html').addClass('ie')}
-	
-	if (is_touch_device) {$('html').addClass('touch');}
-	if (is_windows_touch) {$('html').addClass('wp');}
-	if (isAndroid) {$('html').addClass('android');}
-	
-
-	widthClasses();
 	centerSliderContent();
 	initPeppermint();
 	searchHeader();
@@ -46,28 +22,7 @@ $(function(){
 		$('#mapContact').mapContacts();
 	}	
 	$('.js-head__accord').headAccordion();
-				
-	
-	function widthClasses() {
-		var $html = $('html');
-		
-		function removeWidthClasses(elem) {
-			elem.removeClass('w1216 w9012 w7590 w5075 wl75 wg16');
-		};
-		
-		function setWidthClasses() {
-			var w = $html.width();
-			if (w > 1600) {removeWidthClasses($html);$html.addClass('wg16')}
-			else if (w <= 1600 && w > 1100) {removeWidthClasses($html);$html.addClass('w1216')}
-			else if (w <= 1100 && w > 900) {removeWidthClasses($html);$html.addClass('w9012')}
-			else if (w <= 900 && w > 700) {removeWidthClasses($html);$html.addClass('w7590')}
-			else if (w <= 700 && w > 500) {removeWidthClasses($html);$html.addClass('w5075')}
-			else if (w <= 500 && w > 300) {removeWidthClasses($html);$html.addClass('wl75')}
-		};  
-		
-		setWidthClasses();
-		$(window).resize(function(){setWidthClasses();});
-	};
+
 	
 	function centerSliderContent() {
 		var $slider = $('.slider');
@@ -83,7 +38,7 @@ $(function(){
 						th = $this.height(),
 						mt = th/2;
 						
-				$this.css({'position':'absolute', 'top':'50%', 'margin-top':'-'+mt+'px', 'left':'0', 'right':'0'});
+				$this.css({'position':'absolute', 'top':'50%', 'margin-top':'-'+mt-10+'px', 'left':'0', 'right':'0'});
 			});
 		};
 		
@@ -101,8 +56,6 @@ $(function(){
 
 		slider1.Peppermint({
 			speed: 500,
-			slideshow: true,
-			slideshowInterval: commonTimer,
 			stopSlideshowAfterInteraction: false,
 			dots: true
 		});
@@ -162,72 +115,48 @@ $(function(){
 	};
 	
 	function mainMenu() {		
-		var $menu = $('.mainmenu');
-		if (!$menu.length) {return false;}
-		
-		var $link = $('.mainmenu-link'),
-				$submenu = $('.submenu'),
-				$closer = $('.mainmenu-closer'),
-				$icon = $('.header-menuIcon');
-				timer = 400;
-		
-		
-		function isSmallScreen() {
-			return ($('html').hasClass('w7590'))
-		};
-		
-		function isPhone() {
-			return ($('html').hasClass('wl75') || $('html').hasClass('w5075'))
-		}
-				
-		
-		$link.on('click', function(e){
+		var $menu = $('.mainmenu'),
+			$link = $('.mainmenu-link', $menu),
+			$submenu = $('.submenu', $menu),
+			$closer = $('.mainmenu-closer', $menu),
+			$icon = $('.header-menuIcon'),
+			win = $(window);
+
+		$menu.on('click', '.mainmenu-link', function(e){
 			var $this = $(this);
-			
-			if (!$this.find('.submenu').length) {var loc = $this.attr('href'); location.href = loc;}
-			
-			if (isPhone()) {
-				var had = false;
-				if ($this.hasClass('active')) {had = true;}
-				$('.mainmenu-link').removeClass('active');
-				if (!had) {
+			$link.removeClass('active');
+			$this.addClass('active');
+		});
+
+		$menu.on('click', '.mainmenu-link.active', function(e){
+			$(this).removeClass('active');
+		});
+		
+		
+		$(window).on('load resize', function(){			
+			var wW = $(this).width();
+			if(wW >= 900){
+				$link.on('mouseenter', function(e){
+					var $this = $(this);
 					$this.addClass('active');
-				}
-			}
-			else if (isSmallScreen() && (is_touch_device || is_windows_touch || isAndroid)) {
-				$('.submenu').hide();
-				$this.find('.submenu').show();
-			}
-			else {
-				$this.find('.submenu').stop().fadeIn(timer);
+				});
+
+				$link.on('mouseleave', function(e){
+					var $this = $(this);
+					$this.removeClass('active');
+				});
+			} else {
+				$link.off('mouseenter mouseleave')
 			}
 		});
-		
-		
-		$link.on('mouseenter', function(e){
-			var $this = $(this);
-			if (isPhone()) {}
-			else if (isSmallScreen() || (is_touch_device || is_windows_touch || isAndroid)) {}
-			else {$this.find('.submenu').stop().fadeIn(timer);} 
-		});
-		
-		
-		$link.on('mouseleave', function(e){
-			if (isPhone()) {}
-			else if (isSmallScreen() && (is_touch_device || is_windows_touch || isAndroid)) {$this.find('.submenu').hide();}
-			else {$(this).find('.submenu').stop().fadeOut(timer);}  
-		});
-		
-		
+
 		$closer.on('click', function(e){
-			e.preventDefault();
-			$('.mainmenu').removeClass('active')
+			$menu.removeClass('active')
+			$link.removeClass('active');
 		});
-		
 		
 		$icon.on('click', function(e){
-			e.preventDefault();
-			$('.mainmenu').addClass('active')
+			($menu.hasClass('active')) ? $menu.removeClass('active') : $menu.addClass('active')			
 		});
 	};	
 	

@@ -886,11 +886,9 @@ h3 {
   padding: 0 39px 0 25px;
   display: block;
   letter-spacing: 1px;
-  -o-transition: all 0.35s;
-  -ms-transition: all 0.35s;
-  -moz-transition: all 0.35s;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
+  background-color: transparent;
+  -webkit-transition: background-color .15s;
+  transition: background-color .15s;
 }
 .mainmenu-text:after {
   content: ' ';
@@ -902,13 +900,8 @@ h3 {
   right: 20px;
   top: 0;
   opacity: 1;
-  border-bottom: 4px solid #000;
-  border-bottom: 4px solid rgba(0, 0, 0, 0.4);
   margin-top: -4px;
   z-index: 100;
-  -o-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
@@ -923,35 +916,21 @@ h3 {
   margin-top: -3px;
   background: url(../img/i-arr--2.png) no-repeat top center;
   opacity: 0;
-  -o-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 
 .mainmenu-text:hover {
-  background: #1796ca;
+  background-color: #1796ca;
   color: #ffffff;
-  -o-transition: all 0.35s;
-  -ms-transition: all 0.35s;
-  -moz-transition: all 0.35s;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
 }
 .mainmenu-text:hover:after {
   opacity: 0;
-  -o-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 .mainmenu-text:hover:before {
   opacity: 1;
-  -o-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
@@ -969,10 +948,10 @@ h3 {
   box-shadow: 0 0 2px rgba(0,0,0,0.4);
   display: none;
   z-index: 100;
+  width: 200px;
 }
-.wg16 .submenu,
-.w1216 .submenu {
-  width: 200px !important;
+.mainmenu-link.active .submenu{
+  display: block;
 }
 .submenu-link {
   display: block;
@@ -990,7 +969,8 @@ h3 {
   padding: 4px 0;
   line-height: 24px;
 }
-.submenu-link:hover span {
+.submenu-link:hover span,
+.submenu-link.current span {
   background: #e15243;
   outline: #e15243 solid 3px;  
   color: #ffffff;
@@ -1009,40 +989,18 @@ h3 {
 .mainmenu-link:hover .mainmenu-text {
   background: #1796ca;
   color: #ffffff;
-  -o-transition: all 0.35s;
-  -ms-transition: all 0.35s;
-  -moz-transition: all 0.35s;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
 }
 .mainmenu-link:hover .mainmenu-text:after {
   opacity: 0;
-  -o-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
 }
 .mainmenu-link:hover .mainmenu-text:before {
   opacity: 1;
-  -o-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
 }
 .search {
   background: url(../img/i-search.png) no-repeat center;
   background-color: none;
   cursor: pointer;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
   border-radius: 3px;
-  -o-transition: all 0.35s;
-  -ms-transition: all 0.35s;
-  -moz-transition: all 0.35s;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
 }
@@ -1056,16 +1014,9 @@ h3 {
   height: 100%;
   width: 210px;
   background: #1796ca;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
   border-radius: 3px;
   overflow: hidden;
   width: 0;
-  -o-transition: width 0.4s;
-  -ms-transition: width 0.4s;
-  -moz-transition: width 0.4s;
   -webkit-transition: width 0.4s;
   transition: width 0.4s;
   opacity: 0;
@@ -1260,7 +1211,7 @@ h3 {
   border: 0;
   display: block;
   overflow: hidden;
-  min-height: 298px;
+  /*min-height: 298px;*/
   -webkit-font-smoothing: antialiased;
 }
 .prjsmain-item--bg {
@@ -1276,11 +1227,11 @@ h3 {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: -webkit-transform 10s;
-  -moz-transition: -moz-transform 10s;
-  -ms-transition: -ms-transform 10s;
-  -o-transition: -o-transform 10s;
-  transition: transform 10s;
+  -webkit-transition: -webkit-transform 20s;
+  -moz-transition: -moz-transform 20s;
+  -ms-transition: -ms-transform 20s;
+  -o-transition: -o-transform 20s;
+  transition: transform 20s;
 }
 .prjsmain-pic--transparent {
   opacity: 0;
@@ -1352,16 +1303,11 @@ h3 {
   transition: all 0.35s;
 }
 .prjsmain-item:hover .prjsmain-pic {
-  -webkit-transform: scale(2);
-  -moz-transform: scale(2);
-  -ms-transform: scale(2);
-  -o-transform: scale(2);
-  transform: scale(2);
-  -webkit-transition: -webkit-transform 20s;
-  -moz-transition: -moz-transform 20s;
-  -ms-transition: -ms-transform 20s;
-  -o-transition: -o-transform 20s;
-  transition: transform 20s;
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
 }
 .ie .prjsmain-pic,
 .ie .prjsmain-item:hover .prjsmain-pic {
