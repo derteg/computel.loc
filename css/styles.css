@@ -896,13 +896,14 @@ h3 {
   content: ' ';
   position: absolute;
   display: block;
-  background: url(../img/i-arr.png) 0 50% no-repeat;
+  background: url(../img/i-arr.png) 0 56% no-repeat;
   width: 10px;
   height: 100%;
   right: 20px;
   top: 0;
   opacity: 1;
   border-bottom: 4px solid #000;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.4);
   margin-top: -4px;
   z-index: 100;
   -o-transition: opacity 0.2s;
