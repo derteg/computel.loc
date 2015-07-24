@@ -680,7 +680,7 @@ h3 {
   min-height: 100%;
   height: auto;
   position: relative;
-  min-width: 280px;
+  min-width: 320px;
 }
 #wrap {
   height: auto;
@@ -1135,17 +1135,15 @@ h3 {
 }
 .slider h1 {
   color: #ffffff;
-  text-shadow: 0 2px 0px rgba(0, 0, 0, 0.4);
   margin-bottom: 50px;
 }
 .slider p {
   font-size: 18px;
   line-height: 34px;
-  text-shadow: 0 2px 0px rgba(0, 0, 0, 0.4);
 }
 .slider-content {
-  max-width: 900px;
-  width: 96%;
+  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   color: #ffffff;
@@ -1734,6 +1732,9 @@ figure img {width:100%; height:auto;}
 .bg_02{
   background-color: #009feb;
 }
+.blue{
+  color: #0195cc;
+}
 
 .counter {color:#fff; background: #e15243; display:inline-block; vertical-align: top; font-family: 'PT Sans', sans-serif; font-size: 12px; line-height: 16px; padding:1px 7px; border-radius: 3px; margin-top:8px; margin-left:6px;}
 
@@ -1803,7 +1804,7 @@ a:hover .part-title {color:#e15243}
 .polite {position: relative; background:url(../img/logos/pano.jpg) no-repeat center; background-size: cover; height:545px; color:#fff;}
 .polite .inside {height:100%;}
 .polite-content {position: absolute; height:250px; width:580px; left:50%; margin-left: -220px; top:40%; margin-top: -110px; margin-left: -225px; font-size:18px; line-height:30px; margin-top: -94px;color: #fff;}
-.polite-title {font-size:40px; line-height:45px; font-weight: bold; display:inline; border-bottom:1px inset rgba(255,255,255,0.4); position: relative;}
+.polite-title {font-size:40px; line-height:45px; font-weight: bold; display:inline; border-bottom:1px inset rgba(255,255,255,0.4); position: relative;color: #fff;}
 .polite-desc {padding-top:35px;}
 .polite-title:after {position: absolute; display:block; content:' '; background: url(../img/logos/polite.png) no-repeat; width:70px; height:88px; left:-100px; top:10px;}
 
@@ -1843,7 +1844,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 
 
 .head ul {position: relative; text-align: left; display:inline-block; width:50%; margin-right:-4px; display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin-top:20px; max-width:470px; margin-bottom:10px;}
-.head ul li {padding-bottom:15px; position: relative;}
+.head ul li {padding-bottom:15px; position: relative;padding-right: 20px;}
 .head ul li:after {position: absolute; display:block; content:' '; background: #1796ca; border-radius: 50%; width:4px; height:4px; left:-18px; top:9px;}
 
 .facts {background: #f6f6f4; padding:50px 0 55px; text-align: center;}
@@ -1877,8 +1878,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 .centers a {border:0; color:#0195cc;}
 .centers a:hover {color:#e15243;}
 
-.vacations {background: #fbfbfa;}
-.vacations .inside {background: url(../img/logos/face.jpg) no-repeat bottom right; background-size: auto 100%; padding-top:50px; padding-bottom:20px;}
+.vacations {background: #fbfbfa url(../img/logos/face.jpg) no-repeat bottom right; background-size: auto 100%; padding-top:50px; padding-bottom:20px;}
 
 .vacations-content {width:60%; width:55%; font-size:14px; line-height:24px; padding-left:20px; min-height:400px;}
 .vacations h2 {margin-bottom:28px;}

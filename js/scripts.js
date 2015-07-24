@@ -14,6 +14,11 @@ $(function(){
 	leftMenu();
 	
 
+	clntsMenu();
+
+
+	
+
 	// coddy 
 	$('.other .peppermint, .clnts .peppermint, .js-news__slider').slider3();
 	$('.js-tabs').lightTabs();
@@ -570,3 +575,50 @@ $(function(){
 
 	}
 })(jQuery);
+
+
+function clntsMenu(){
+	var cont = $('.js-mobile__accord'),
+		block = $('.clnts-items', cont);
+		$window = $(window),
+		hasPrepended = false;
+
+
+	function toggleBar(){
+		if($(this).outerWidth(true) <= 640){
+			if(hasPrepended == true){
+				return;
+			}
+			hasPrepended = true;
+
+			// block.hide();
+			cont.on('click', clientEv);
+		} else if ($(this).outerWidth(true) > 640){
+			hasPrepended = false;
+			// block.show();
+			cont.off('click');
+		}
+	}
+
+	function clientEv(event){
+		var that = $(this),
+			nodeType = event.target.nodeName,
+			closestA = event.target.closest('a');
+			
+		block = $('.clnts-items', that);
+
+			$('body').finish().animate({
+				scrollTop: that.offset().top - 70
+			});
+
+			// console.log(closestA == null);
+		if(nodeType !== 'INPUT' && nodeType !== 'A' &&  closestA == null ){
+			that.toggleClass('current');
+		}		
+	}
+
+	
+
+	$window.on('load resize', function(){ toggleBar(); });
+	
+}

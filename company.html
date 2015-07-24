@@ -9,7 +9,11 @@
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
         <link href="css/mobile.css" rel="stylesheet" type="text/css" />
 
-        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {document.write(unescape("%3Cscript src='js/jquery-1.11.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+        </script>
         <script src="js/plugins/plugins.js"></script>
         <script src="js/scripts.js"></script>
     </head>
@@ -84,7 +88,7 @@
 		            	</div>
 		            </section>
 		            	           
-		            <section class="head">
+		            <section class="section section_accord js-mobile__accord head">
 		            	<div class="inside">
 				            <h2>Компания CompuTel</h2>
 				            <p>Деятельность компании и намерения ее персонала направлены на удовлетворение потребностей 
@@ -93,56 +97,59 @@
 		            	</div>
 		            </section>	            
 		            
-		            <section class="parts parts--in">
+		            <section class="section section_accord js-mobile__accord parts parts--in">
 		            	<div class="inside">
 				            <h2>Технологические партнеры</h2>
 				            <p>Деятельность компании и намерения ее персонала направлены на удовлетворение потребностей и ожиданий государственного заказчика</p>
-				            <ul>
-					            <li class="part">
-					            	<a href="#" class="part-link">
-						            	<span class="part-image"><img src="img/logos/l1.png" alt="l1" width="175" height="33"></span>
-						            	<span class="part-title">Oracle</span>
-						            	<span class="part-desc">Gold Business Partner</span>
-					            	</a>
-					            </li>
-					            <li class="part">
-					            	<a href="#" class="part-link">
-						            	<span class="part-image"><img src="img/logos/l2.png" alt="l2" width="178" height="120"></span>
-						            	<span class="part-title">Cisco</span>
-						            	<span class="part-desc">Premier Certified Partner</span>
-					            	</a>
-					            </li>
-					            <li class="part">
-					            	<a href="#" class="part-link">
-						            	<span class="part-image"><img src="img/logos/l3.png" alt="l3" width="134" height="108"></span>
-						            	<span class="part-title">Microsoft</span>
-						            	<span class="part-desc">Microsoft Gold Certified Partner</span>
-					            	</a>
-					            </li>
-					            <li class="part">
-					            	<a href="#" class="part-link">
-						            	<span class="part-image"><img src="img/logos/l4.png" alt="l4" width="157" height="74"></span>
-						            	<span class="part-title">IBM</span>
-						            	<span class="part-desc">Premier Business Partner, Business Partner for Services </span>
-					            	</a>
-					            </li>
-					            <li class="part">
-					            	<a href="#" class="part-link">
-						            	<span class="part-image"><img src="img/logos/l5.png" alt="l5" width="189" height="37"></span>
-						            	<span class="part-title">Dell</span>
-						            	<span class="part-desc">Registered Partner</span>
-					            	</a>
-					            </li>
-				            </ul>
-			            	<a href="#" class="button">Все партнёры</a>
+
+			            	<div class="js-mobile__accord-cont accord-cont">
+					            <ul>
+						            <li class="part">
+						            	<a href="#" class="part-link">
+							            	<span class="part-image"><img src="img/logos/l1.png" alt="l1" width="175" height="33"></span>
+							            	<span class="part-title">Oracle</span>
+							            	<span class="part-desc">Gold Business Partner</span>
+						            	</a>
+						            </li>
+						            <li class="part">
+						            	<a href="#" class="part-link">
+							            	<span class="part-image"><img src="img/logos/l2.png" alt="l2" width="178" height="120"></span>
+							            	<span class="part-title">Cisco</span>
+							            	<span class="part-desc">Premier Certified Partner</span>
+						            	</a>
+						            </li>
+						            <li class="part">
+						            	<a href="#" class="part-link">
+							            	<span class="part-image"><img src="img/logos/l3.png" alt="l3" width="134" height="108"></span>
+							            	<span class="part-title">Microsoft</span>
+							            	<span class="part-desc">Microsoft Gold Certified Partner</span>
+						            	</a>
+						            </li>
+						            <li class="part">
+						            	<a href="#" class="part-link">
+							            	<span class="part-image"><img src="img/logos/l4.png" alt="l4" width="157" height="74"></span>
+							            	<span class="part-title">IBM</span>
+							            	<span class="part-desc">Premier Business Partner, Business Partner for Services </span>
+						            	</a>
+						            </li>
+						            <li class="part">
+						            	<a href="#" class="part-link">
+							            	<span class="part-image"><img src="img/logos/l5.png" alt="l5" width="189" height="37"></span>
+							            	<span class="part-title">Dell</span>
+							            	<span class="part-desc">Registered Partner</span>
+						            	</a>
+						            </li>
+					            </ul>
+			            		<a href="#" class="button">Все партнёры</a>
+			            	</div>
 		            	</div>
 		            </section>	            
 		            
-		            <section class="section clnts">
+		            <section class="section section_accord js-mobile__accord clnts">
 		            	<div class="inside">
 				            <h2>Заказчики</h2>
 				            <p>Деятельность компании и намерения ее персонала направлены на удовлетворение потребностей и ожиданий государственного заказчика</p>
-				            <div class="clnts-items">
+				            <div class="clnts-items js-mobile__accord-cont accord-cont">
 					            <a href="#" class="clnts-item">
 					            	<img class="clnts-img" src="img/logos/s1.jpg" alt="s1" width="370" height="273">
 						            <span class="clnts-title"><span>Банки и финансовые организации</span></span>
@@ -171,40 +178,44 @@
 		            	</div>
 		            </section>	            
 		            
-		            <section class="section serts"><div class="inside">
-			            <div class="serts-content">
-				            <h2>Лицензии и сертификаты</h2>
-				            <p>Деятельность компании и намерения ее персонала направлены на удовлетворение потребностей и ожиданий государственного заказчика</p>
-				            <a href="#" class="button">Узнать больше</a>
-			            </div>
-			            <div class="serts-images">
-				            <div class="serts-sert">
-					            <span class="license-image"><img src="img/logos/lic1.png" alt="lic1" width="300" height="414"></span>
-				            </div>
-				            <div class="serts-sert">
-					            <span class="license-image"><img src="img/logos/lic2.png" alt="lic1" width="300" height="414"></span>
-				            </div>
-			            </div>
-		            </div></section>	            	           
-		            
-		            <section class="polite">
+		            <section class="section section_accord js-mobile__accord serts">
 		            	<div class="inside">
-			            	<a href="#">
-					            <div class="polite-content">
-						            <div class="polite-title">Политика в области качества</div>
-						            <div class="polite-desc">Деятельность компании и намерения ее персонала направлены на удовлетворение потребностей и ожиданий государственного заказчика и потребителей в сфере обеспечения обороны государства, государственных нужд, а также потребителей других секторов экономики и бизнеса в области информационных технологий.</div>
+				            <div class="serts-content">
+					            <h2>Лицензии и сертификаты</h2>
+					            <p>Деятельность компании и намерения ее персонала направлены на удовлетворение потребностей и ожиданий государственного заказчика</p>
+					            <a href="#" class="button">Узнать больше</a>
+				            </div>
+				            <div class="serts-images js-mobile__accord-cont accord-cont">
+					            <div class="serts-sert">
+						            <span class="license-image"><img src="img/logos/lic1.png" alt="lic1" width="300" height="414"></span>
 					            </div>
-				            </a>
+					            <div class="serts-sert">
+						            <span class="license-image"><img src="img/logos/lic2.png" alt="lic1" width="300" height="414"></span>
+					            </div>
+				            </div>
+		            	</div>
+		            </section>	            	           
+		            
+		            <section class="section section_accord js-mobile__accord polite">
+		            	<div class="inside">			            	
+				            <div class="polite-content">
+					            <a href="#0" class="polite-title">Политика в области качества</a>
+					            <div class="polite-desc">Деятельность компании и намерения ее персонала направлены на удовлетворение потребностей и ожиданий государственного заказчика и потребителей в сфере обеспечения обороны государства, государственных нужд, а также потребителей других секторов экономики и бизнеса в области информационных технологий.</div>
+				            </div>
 		            	</div>
 		            </section>
 		            
-		            <section class="section vacations"><div class="inside">
-			            <div class="vacations-content"><form>
-				            <h2>Карьера в CompuTel</h2>
-				            <p>Деятельность компании и намерения ее персонала направлены на удовлетворение потребностей и ожиданий государственного заказчика и потребителей в сфере обеспечения обороны государства, государственных нужд</p>
-				            <a href="#" class="button">Загрузить резюме <input type="file" id="file" class="hidden" /></a>
-			            </form></div>
-		            </div></section>
+		            <section class="section section_accord js-mobile__accord vacations">
+		            	<div class="inside">
+				            <div class="vacations-content">
+				            	<form>
+						            <h2><a href="#0">Карьера в CompuTel</a></h2>
+						            <p>Деятельность компании и намерения ее персонала направлены на удовлетворение потребностей и ожиданий государственного заказчика и потребителей в сфере обеспечения обороны государства, государственных нужд</p>
+						            <a href="#" class="button">Загрузить резюме <input type="file" id="file" class="hidden" /></a>
+					            </form>
+				            </div>
+		            	</div>
+		            </section>
 	            </div>
                 
 	        </div>
