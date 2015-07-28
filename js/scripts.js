@@ -603,7 +603,16 @@ function clntsMenu(){
 		slider.slick({
 			infinite: true,
 			dots: true,
-			arrows: false
+			arrows: false,
+			swipe: false,
+			responsive: [
+				{
+					breakpoint: 1100,
+					settings: {
+						swipe: true
+					}
+				}
+			]
 		})
 	}
 })(jQuery);
@@ -617,6 +626,7 @@ function clntsMenu(){
 			slidesToScroll: 5,
 			infinite: false,
 			arrow: false,
+			swipe: false,
 			responsive: [
 				{
 					breakpoint: 1100,
@@ -626,7 +636,8 @@ function clntsMenu(){
 						infinite: false,
 						centerMode: false,
 						variableWidth: false,
-						arrows: true
+						arrows: true,
+						swipe: true
 					}
 				}
 			]
