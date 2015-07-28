@@ -7,11 +7,7 @@
         <title>Заказчики :: Computel</title>
            
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
-        <link href="css/mobile.css" rel="stylesheet" type="text/css" />
-
-        <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/plugins/plugins.js"></script>
-        <script src="js/scripts.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width: 1100px)" href="css/mobile.css"/>
     </head>
     
     <body>
@@ -96,6 +92,21 @@
 	            
 	            <section class="clients">
 		            <div class="inside">
+		            	<div class="select">
+		            		<div class="select-val">Все заказчики</div>
+		            		<input type="hidden" />
+		            		<ul class="select-list scrollpane">
+		            			<li>Все заказчики</li>
+		            			<li>Банки</li>
+		            			<li>Торговля</li>
+		            			<li>Нефтегазовые предприятия</li>
+		            			<li>Промыщленность</li>
+		            			<li>Строительные компании</li>
+		            			<li>Услуги</li>
+		            			<li>Образование</li>
+		            			<li>Провайдеры</li>
+		            		</ul>
+		            	</div>
 		            	<div class="clients-cats">
 		            		<ul class="clients-cats__list js-tabs-client__list">
 		            			<li class="clients-cats__item">
@@ -308,6 +319,14 @@
             </div>
         </footer>
         <!--footer-->
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {document.write(unescape("%3Cscript src='js/jquery-1.11.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+        </script>
+        <script src="js/plugins/plugins.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
     <!--body -->
 

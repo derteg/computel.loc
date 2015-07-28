@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-    
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <title>Главная :: Computel</title>
 
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
-        <link href="css/mobile.css" rel="stylesheet" type="text/css" />
-
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="js/plugins/plugins.js"></script>
-        <script src="js/scripts.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width: 1100px)" href="css/mobile.css"/>
     </head>
     
     <body>
@@ -68,7 +63,7 @@
                     </div>
                 </header>
                 <!--header-->
-                <section class="section slider peppermint">
+                <section class="section slider js-promo__slider">
                     <figure class="slider-item slider-item--1">
                         <div class="inside">
                             <div class="slider-content">
@@ -157,39 +152,25 @@
             </section>
             <section class="section partners">
                 <div class="inside">
-                    <ul class="partners-list">
-                        <li class="partners-item"><a href="#0"><img src="img/log-1.png" alt="log-1" /></a>
-                        </li>
-                        <li class="partners-item"><a href="#0"><img src="img/log-2.png" alt="log-1" /></a>
-                        </li>
-                        <li class="partners-item"><a href="#0"><img src="img/log-3.png" alt="log-1" /></a>
-                        </li>
-                        <li class="partners-item"><a href="#0"><img src="img/log-4.png" alt="log-1" /></a>
-                        </li>
-                        <li class="partners-item"><a href="#0"><img src="img/log-5.png" alt="log-1" /></a>
-                        </li>
-                        <li class="partners-item"><a href="#0"><img src="img/log-6.png" alt="log-1" /></a>
-                        </li>
-                    </ul>
-                    <div class="partners-arrow partners-arrow--left"></div>
-                    <div class="partners-arrow partners-arrow--right"></div>
-                    <div class="partners-slider peppermint">
-                        <figure class="partners-slide">
-                            <div class="partners-item"><a href="#0"><img src="img/log-1.png" alt="log-1" /></a>
-                            </div>
-                            <div class="partners-item"><a href="#0"><img src="img/log-2.png" alt="log-1" /></a>
-                            </div>
-                            <div class="partners-item"><a href="#0"><img src="img/log-3.png" alt="log-1" /></a>
-                            </div>
-                            <div class="partners-item"><a href="#0"><img src="img/log-4.png" alt="log-1" /></a>
-                            </div>
-                        </figure>
-                        <figure class="partners-slide">
-                            <div class="partners-item"><a href="#0"><img src="img/log-5.png" alt="log-1" /></a>
-                            </div>
-                            <div class="partners-item"><a href="#0"><img src="img/log-6.png" alt="log-1" /></a>
-                            </div>
-                        </figure>
+                    <div class="partners-slider js-partners_slider ">
+                        <div class="partners-item">
+                            <a href="#0"><img src="img/log-1.png" alt="log-1" /></a>
+                        </div>
+                        <div class="partners-item">
+                            <a href="#0"><img src="img/log-2.png" alt="log-1" /></a>
+                        </div>
+                        <div class="partners-item">
+                            <a href="#0"><img src="img/log-3.png" alt="log-1" /></a>
+                        </div>
+                        <div class="partners-item">
+                            <a href="#0"><img src="img/log-4.png" alt="log-1" /></a>
+                        </div>
+                        <div class="partners-item">
+                            <a href="#0"><img src="img/log-5.png" alt="log-1" /></a>
+                        </div>
+                        <div class="partners-item">
+                            <a href="#0"><img src="img/log-6.png" alt="log-1" /></a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -277,6 +258,14 @@
             </div>
         </footer>
         <!--footer-->
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {document.write(unescape("%3Cscript src='js/jquery-1.11.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+        </script>
+        <script src="js/plugins/plugins.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
     <!--body -->    
 

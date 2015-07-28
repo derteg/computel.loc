@@ -1,282 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700,400, 600&subset=latin,cyrillic-ext);
 
-/* Peppermint required styles + default appearance styles */
-
-.peppermint.peppermint-active {
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.peppermint.peppermint-active .peppermint-slides {
-  position: relative;
-  overflow: hidden; /* clearfix */
-  -ms-touch-action: pan-y;
-  touch-action: pan-y;
-}
-
-.peppermint.peppermint-active .peppermint-slides > * {
-  float: left;
-  margin: 0;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
-}
-
-.peppermint.peppermint-active .peppermint-slides a:active,
-.peppermint.peppermint-active .peppermint-slides a:active img {
-  outline: none;
-}
-
-.peppermint.peppermint-active,
-.peppermint.peppermint-active .peppermint-dots,
-.peppermint.peppermint-active .peppermint-slides,
-.peppermint.peppermint-active .peppermint-slides > * {
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  -moz-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.peppermint.peppermint-mouse .peppermint-slides {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: move;
-  cursor: -webkit-grab;
-  cursor: -moz-grab;
-  cursor: grab;
-}
-
-.peppermint.peppermint-mouse.peppermint-drag .peppermint-slides * {
-  cursor: move;
-  cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
-  cursor: grabbing;
-}
-
-/* default appearance styles */
-.peppermint {
-  text-align: center;
-}
-
-.peppermint figure img {
-  max-width: 100%;
-}
-
-.peppermint figure figcaption {
-  font-style: italic;
-  color: #787575;
-  font-size: 0.8em;
-}
-
-.peppermint.peppermint-active {
-
-}
-
-.peppermint-slides {
-}
-
-/* dots */
-ul.peppermint-dots {
-  margin: 0.6em 0;
-  padding: 0;
-  text-align: center;
-  list-style-type: none;
-}
-
-.peppermint.peppermint-active ul.peppermint-dots {
-  margin: 0 0 0.6em 0;
-}
-
-.peppermint.peppermint-active .peppermint-slides + ul.peppermint-dots {
-  /*margin: 0.6em 0 0 0;*/
-  position: absolute;
-  bottom:60px; left:0;
-  right:0;
-  margin:0;
-}
-
-ul.peppermint-dots > li {
-  display: inline-block;
-  position: relative;
-  padding: 0;
-  margin:0 8px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  cursor: pointer;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  /* ie7 fallback */
-  *display: inline;
-  *zoom: 1;
-}
-
-ul.peppermint-dots > li.peppermint-mouse-clicked,
-ul.peppermint-dots > li:active {
-  outline: 0;
-}
-
-ul.peppermint-dots > li > span {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-top:-5px;
-  margin-left:-6px;
-  background: #fff;
-}
-
-ul.peppermint-dots > li.peppermint-active-dot > span {
-  width: 10px;
-  height: 10px;
-  background: #1796ca;
-}
-
-ul.peppermint-dots > li.peppermint-active-dot {
-  border:1px solid #909090;
-}
-
-
-/*
- * CSS Styles that are needed by jScrollPane for it to operate correctly.
- *
- * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
- * may not operate correctly without them.
- */
-
-.jspContainer
-{
-  overflow: hidden;
-  position: relative;
-}
-
-.jspPane
-{
-  position: absolute;
-}
-
-.jspVerticalBar
-{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 16px;
-  height: 100%;
-  background: red;
-}
-
-.jspHorizontalBar
-{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 16px;
-  background: red;
-}
-
-.jspCap
-{
-  display: none;
-}
-
-.jspHorizontalBar .jspCap
-{
-  float: left;
-}
-
-.jspTrack
-{
-  background: #dde;
-  position: relative;
-}
-
-.jspDrag
-{
-  background: #bbd;
-  position: relative;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-.jspHorizontalBar .jspTrack,
-.jspHorizontalBar .jspDrag
-{
-  float: left;
-  height: 100%;
-}
-
-.jspArrow
-{
-  background: #50506d;
-  text-indent: -20000px;
-  display: block;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-}
-
-.jspArrow.jspDisabled
-{
-  cursor: default;
-  background: #80808d;
-}
-
-.jspVerticalBar .jspArrow
-{
-  height: 16px;
-}
-
-.jspHorizontalBar .jspArrow
-{
-  width: 16px;
-  float: left;
-  height: 100%;
-}
-
-.jspVerticalBar .jspArrow:focus
-{
-  outline: none;
-}
-
-.jspCorner
-{
-  background: #eeeef4;
-  float: left;
-  height: 100%;
-}
-
-/* Yuk! CSS Hack for IE6 3 pixel bug :( */
-* html .jspCorner
-{
-  margin: 0 -3px 0 0;
-}
-
-
-.scrollpane {outline: none;}
-.jspVerticalBar {background: none; width:10px;}
-.jspTrack {background: none;}
-.jspDrag {width: 8px; background: #888; background: rgba(0,0,0,0.5); -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px;}
-.jspPane {width:100% !important;}
 
 
 /* Basics */
@@ -1174,6 +897,39 @@ h3 {
 .slider-item--3 .slider-content {
   max-width: 950px;
 }
+.slick-dots{
+  position: absolute;  
+  text-align: center;
+  width: 100%;
+}
+.slider .slick-dots{
+  bottom: 60px;
+}
+.other-slider .slick-dots button{
+  background-color: #000;
+}
+.slick-dots li{
+  width: 10px;
+  height: 10px;
+  display: inline-block;  
+  margin: 0 8px;  
+}
+.slick-dots .slick-active button{
+  background-color: #1796ca;
+  cursor: default;
+}
+.slick-dots button{
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  display: inline-block;
+  text-indent: -9999px;
+  overflow: hidden;  
+  cursor: pointer;
+  vertical-align: top;
+}
 .prjsmain {
   padding: 40px 0 0 0;
   overflow: hidden;
@@ -1357,21 +1113,21 @@ h3 {
   display: none;
 }
 .partners-item {
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: top;
-  *zoom: 1;
-  *display: inline;
-  margin-right: -4px;
-  margin: 0 2%;
   line-height: 0;
   vertical-align: middle;
+  text-align: center;
 }
-.partners-item:first-child {
-  margin-left: 0;
+.partners-slider a,
+.partners-slider img,
+.partners-item {
+  border: none;
+  outline: none;
 }
 .partners-item a {
   border: 0;
+  display: inline-block;
 }
 .partners-item img {
   opacity: 0.5;
@@ -1694,25 +1450,26 @@ a {
 .main-content a:hover {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3);}
 .main-content h2 {font-size:40px; line-height:45px; position: relative; padding-top:20px; padding-bottom:20px; color:#000;}
 .main-content h3 {font-size:35px; line-height:45px; position: relative; font-weight: normal; padding-bottom:18px; color:#000;}
-.main-content h4 {font-size:18px; line-height:25px; color:#2b2b2b; font-weight: lighter; padding-bottom:15px;}
+.main-content h4 {font-size:18px; line-height:25px; color:#2b2b2b; font-weight: normal; padding-bottom:15px;}
 .main-content h5 {font-size:18px; line-height:25px; color:#2b2b2b; font-weight: normal; padding-bottom:15px; margin-top: 25px;}
 .main-content p {font-size:13px; line-height:26px; margin-bottom:27px;}
 .main-content blockquote {font-size:15px; line-height:32px; margin-bottom:38px;}
-.main-content ol {list-style: none; padding-left:40px; font-weight: lighter;}
+.main-content ol {list-style: none; padding-left:40px; font-weight: normal;}
 .main-content ul {list-style: none; padding-left:40px; padding-bottom:20px;}
 .main-content li {position: relative;}
 .main-content ul li {padding-bottom:15px;}
 .main-content ul li:after {position: absolute; display:block; content:' '; background: #1796ca; border-radius: 50%; width:4px; height:4px; left:-18px; top:9px;}
-.main-content figure {position: relative; display:block; padding-top:15px; padding-bottom:35px;}
-figure img {width:100%; height:auto;}
+.main-content figure {position: relative; display:block; padding-top:15px;padding-bottom: 35px;}
+.main-content figure img {width:100%; height:auto;}
 .main-content figcaption {position: relative; display: block; font-size:12px; line-height:20px; color:#8b8a8a; padding-top:15px;}
 .main-content ol .big {font-size:18px; line-height:25px; font-weight: normal; padding-bottom:20px; display:block;}
-.main-content table {width:100%; margin-top:48px;}
-.main-content table td {vertical-align: text-top; font-size:13px; line-height:20px; font-weight: normal; padding-top: 35px; padding-bottom: 3px; border-top:4px solid #f4f4f4;}
-.main-content table tr:first-child td {border-top:4px solid #e15243;}
-.main-content table td:first-child { width:205px; font-size:18px; line-height:25px; font-weight: normal;}
-.main-content table li {position: relative; padding-left: 45px; padding-bottom: 17px;}
-.main-content table li:after {position: absolute; display:block; content:' '; background: #1796ca; border-radius: 50%; width:4px; height:4px; left:18px; top:9px;}
+
+.pseudo-tbl {width:100%; margin-top:48px;margin-left: 4px;}
+.pseudo-tbl__row:first-child{border-top: 4px solid #e15243;}
+.pseudo-tbl__row{border-top: 4px solid #f4f4f4;}
+.pseudo-tbl__title, .pseudo-tbl__cont {vertical-align: text-top; font-size:13px; line-height:20px; font-weight: normal; padding-top: 35px; padding-bottom: 3px; display: inline-block; margin-left: -4px;box-sizing: border-box;}
+.pseudo-tbl__cont{width: 70%;}
+.pseudo-tbl__title { width:30%; font-size:18px; line-height:25px; font-weight: normal;}
 
 .main-content--left .main-wrap {padding:18px 0 30px 25px;}
 .main-content--left h3 {font-size:41px}
@@ -1769,7 +1526,11 @@ a:hover .part-title {color:#e15243}
 
 
 
+.clients .select{
+  display: none;
+}
 .clients-cats {position: relative; text-align: center; padding-bottom:35px; margin-top:-8px;}
+.clients-cats .select{display: none;}
 .clients-cats__item{display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin: 0 13px;}
 .clients-link {color:#1896ca; border-bottom:1px dotted #1896ca; line-height:1em; font-size:12px;text-decoration: none;}
 .clients-link:hover {color:#e15243; border-color:rgba(225, 83, 67, 0.3);}
@@ -1809,8 +1570,8 @@ a:hover .part-title {color:#e15243}
 .polite-title:after {position: absolute; display:block; content:' '; background: url(../img/logos/polite.png) no-repeat; width:70px; height:88px; left:-100px; top:10px;}
 
 .sert {position: relative; padding-bottom:35px;}
-.sert-image {position: relative; max-width: 340px; width:30%; display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin-right:-4px; background: #fff; line-height:0; max-width: 340px; width: 25%; padding-left:2%;}
-.sert-image img {width:100%; height:auto; max-width:100%; border:20px solid #fff;}
+.sert-image {position: relative; display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin-right:-4px; background: #fff; line-height:0; max-width: 340px; width: 25%; padding-left:2%;}
+.sert-image img {width:100%; height:auto; max-width:100%; border:20px solid #fff;box-sizing: border-box;}
 .sert-image:after {display:block; content:' '; position: absolute; bottom:-22px; background: url(../img/logos/shadow.png) no-repeat top center; background-size: 100% 100%; left:0; width:110%; height:22px;}
 .sert-text {display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin-right:-4px; width:60%; padding-left:10%; font-size:15px; line-height:25px; font-size:13px; line-height:25px; padding-top:0;}
 .sert-text p {margin-bottom:20px;}
@@ -1901,7 +1662,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 .learn h3 {font-size:35px; line-height:45px; position: relative; font-weight: normal; padding-bottom:15px; color:#000; padding-bottom: 25px;}
 .learn p {margin-bottom:20px; font-size: 13px;}
 .learn .button {margin-top:15px;}
-.learn-content {width:55%; position: relative; min-height:328px; font-size:14px; line-height:24px;}
+.learn-content {width:55%; min-height:328px; font-size:14px; line-height:24px;}
 .learn img {width:40%; top:0; right:30px; position: absolute; height:auto; max-height:328px;}
 .learn-content .quote__title a{color: #1896ca; font-size: 18px;}
 .learn-content .guote__text{color: #797979; font-size: 12px; padding-left: 40px; position: relative;}
@@ -1916,15 +1677,23 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 .other-i img {vertical-align: middle;}
 .other-title {max-width:120px; margin:0 auto;}
 
-.other-slider__pic{
-  width: 33.3%;
-  float: left;
-  overflow: hidden;
+.other-slider {
+  margin-top: 40px;
+  margin-bottom: 80px;  
 }
-.other-slider__pic img{
-  margin-left: 10px;
-  width: 100%;
+.other-slider .slick-dots{
+  margin-top: 40px;
+  top: 100%;
+}
+.other-slider__pic{
+  text-align: center;
+  border: none;
+  outline: none;
+}
+.other-slider__pic img{  
+  width: 96%;
   height: auto;
+  display: inline-block;  
 }
 .other .peppermint {margin: 40px 0 25px -10px;}
 .other .peppermint.peppermint-active ul.peppermint-dots {bottom:0;}
@@ -3066,3 +2835,248 @@ ul.history__tabs-list:after{
 .contact__btn{
   margin-top: 38px;
 }
+
+
+
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer
+{
+  overflow: hidden;
+  position: relative;
+}
+
+.jspPane
+{
+  position: absolute;
+}
+
+.jspVerticalBar
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 100%;
+  background: red;
+}
+
+.jspHorizontalBar
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: red;
+}
+
+.jspCap
+{
+  display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+  float: left;
+}
+
+.jspTrack
+{
+  background: #dde;
+  position: relative;
+}
+
+.jspDrag
+{
+  background: #bbd;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+  float: left;
+  height: 100%;
+}
+
+.jspArrow
+{
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.jspArrow.jspDisabled
+{
+  cursor: default;
+  background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+  height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+  outline: none;
+}
+
+.jspCorner
+{
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+  margin: 0 -3px 0 0;
+}
+
+
+.scrollpane {outline: none;}
+.jspVerticalBar {background: none; width:10px;}
+.jspTrack {background: none;}
+.jspDrag {width: 8px; background: #888; background: rgba(0,0,0,0.5); -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px;}
+.jspPane {width:100% !important;}

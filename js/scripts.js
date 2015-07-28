@@ -1,6 +1,5 @@
 $(function(){
 	centerSliderContent();
-	initPeppermint();
 	searchHeader();
 	mainMenu();
 	catMenu();
@@ -20,8 +19,10 @@ $(function(){
 	
 
 	// coddy 
-	$('.other .peppermint, .clnts .peppermint, .js-news__slider').slider3();
 	$('.js-tabs').lightTabs();
+	$('.js-promo__slider').promoSlider();
+	$('.partners-slider').partnersSlider();
+	$('.other-slider').otherSlider();
 	ajaxMoreBlocks();
 	if($('#mapContact').length){
 		$('#mapContact').mapContacts();
@@ -49,28 +50,6 @@ $(function(){
 		
 		center();
 		$(window).resize(function(){center();});	
-	};
-	
-	function initPeppermint() {
-		
-		if (!$('.peppermint').length) {return false;}
-		var curSlideNumber = 0,
-				commonTimer = 4000;
-		
-		var slider1 = $('.slider.peppermint');
-
-		slider1.Peppermint({
-			speed: 500,
-			stopSlideshowAfterInteraction: false,
-			dots: true
-		});
-	
-		
-		var slider2 = $('.partners-slider.peppermint');
-			slider2.Peppermint({
-				slideshow: false,
-				dots: false
-			});
 	};
 	
 	function searchHeader() {	
@@ -263,7 +242,7 @@ $(function(){
 				var $this = $(this);
 				if ($this.text() == text) {ok = false;}
 			});
-			if (ok) {$wrap.append(templ2);}
+			if (ok) {$wrap.append(templ2).addClass('active');}
 		};
 		
 		this.removeTag = function($tag) {
@@ -276,6 +255,7 @@ $(function(){
 		this.removeTags = function() {
 			$wrap.find('.tag').remove();
 			$reset.hide();
+			// $wrap.removeClass('active');
 		};
 		
 		$wrap.on('click', function(e){
@@ -404,7 +384,7 @@ $(function(){
 	    	btn.click(function(e){
 				e.preventDefault();
 				var a = $(this),
-				PREVBLOCK = a.parents('.js-ajax-block__list');
+				PREVBLOCK = a.parent().prev('.js-ajax-block__list');
 
 			$.ajax({
 				url: a.attr('href'),
@@ -412,7 +392,7 @@ $(function(){
 				cache: true,
 				success: function(html){
 					$('body').animate({
-						scrollTop: a.offset().top - 35
+						scrollTop: a.offset().top - 70
 					}, 800)
 					PREVBLOCK.append(html).fadeIn('slow');
 					setEqualHeights();
@@ -450,16 +430,7 @@ $(function(){
 		
 });
 
-(function($){
-	$.fn.slider3 = function(){
-		var slider = $(this);
 
-		slider.Peppermint({
-			slideshow: false,
-			dots: true
-		});
-	}
-})(jQuery);
 
 
 
@@ -585,7 +556,7 @@ function clntsMenu(){
 
 
 	function toggleBar(){
-		if($(this).outerWidth(true) <= 640){
+		if($(this).outerWidth(true) <= 765){
 			if(hasPrepended == true){
 				return;
 			}
@@ -593,7 +564,7 @@ function clntsMenu(){
 
 			// block.hide();
 			cont.on('click', clientEv);
-		} else if ($(this).outerWidth(true) > 640){
+		} else if ($(this).outerWidth(true) > 765){
 			hasPrepended = false;
 			// block.show();
 			cont.off('click');
@@ -603,15 +574,15 @@ function clntsMenu(){
 	function clientEv(event){
 		var that = $(this),
 			nodeType = event.target.nodeName,
-			closestA = event.target.closest('a');
+			closestA = event.target.closest('a'),
+			offsetA = that.offset().top - 70;
 			
 		block = $('.clnts-items', that);
 
 			$('body').finish().animate({
-				scrollTop: that.offset().top - 70
+				scrollTop: offsetA
 			});
 
-			// console.log(closestA == null);
 		if(nodeType !== 'INPUT' && nodeType !== 'A' &&  closestA == null ){
 			that.toggleClass('current');
 		}		
@@ -622,3 +593,76 @@ function clntsMenu(){
 	$window.on('load resize', function(){ toggleBar(); });
 	
 }
+
+
+
+(function($){
+	$.fn.promoSlider = function(){
+		var slider = this;
+
+		slider.slick({
+			infinite: true,
+			dots: true,
+			arrows: false
+		})
+	}
+})(jQuery);
+
+(function($){
+	$.fn.partnersSlider = function(){
+		var slider = this;
+
+		slider.slick({
+			slidesToShow: 5,
+			slidesToScroll: 5,
+			infinite: false,
+			arrow: false,
+			responsive: [
+				{
+					breakpoint: 1100,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1,
+						infinite: false,
+						centerMode: false,
+						variableWidth: false,
+						arrows: true
+					}
+				}
+			]
+		})
+	}
+})(jQuery);
+
+
+(function($){
+	$.fn.otherSlider = function(){
+		var slider = this;
+
+		slider.slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			arrows: false,
+			dots: true,
+			swipe: false,
+			responsive: [
+				{
+					breakpoint: 1100,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						swipe: true,
+					}
+				},
+				{
+					breakpoint: 765,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						swipe: true,
+					}
+				}
+			]
+		});
+	}
+})(jQuery);
