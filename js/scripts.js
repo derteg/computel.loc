@@ -7,7 +7,10 @@ $(function(){
 	scrollpane();
 	dropDown();
 	setEqualHeights();
-	fancy();
+
+	if($('.license a').length){
+		fancy();
+	}
 	clients();
 	rc();
 	leftMenu();
@@ -22,7 +25,7 @@ $(function(){
 	$('.js-tabs').lightTabs();
 	$('.js-promo__slider').promoSlider();
 	$('.partners-slider').partnersSlider();
-	$('.other-slider').otherSlider();
+	$('.other-slider, .js-news__slider').otherSlider();
 	ajaxMoreBlocks();
 	if($('#mapContact').length){
 		$('#mapContact').mapContacts();
@@ -645,14 +648,13 @@ function clntsMenu(){
 	}
 })(jQuery);
 
-
 (function($){
 	$.fn.otherSlider = function(){
 		var slider = this;
 
 		slider.slick({
 			slidesToShow: 3,
-			slidesToScroll: 1,
+			slidesToScroll: 3,
 			arrows: false,
 			dots: true,
 			swipe: false,
@@ -670,7 +672,7 @@ function clntsMenu(){
 					settings: {
 						slidesToShow: 1,
 						slidesToScroll: 1,
-						swipe: true,
+						swipe: true
 					}
 				}
 			]
