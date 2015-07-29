@@ -1124,6 +1124,7 @@
 
 	.label{font-size: 12px;padding: 0px 2px;}
 
+
 	.footer__min{
 		height: 82px;
 		margin-top: 0;
@@ -1137,6 +1138,13 @@
 		float: none;
 	}
 	.error-page__content{
+		margin-right: 0;
+	}
+	.error-page__form{
+		display: block;
+	}
+	.error-page__form input{
+		width: 100%;
 	}
 	.error-page__col{
 		display: block;
@@ -1145,6 +1153,6 @@
 		width: 100%;
 		height: auto;
 	}
-	.error-page__info{margin-top: 16px;}
+	.error-page__info{margin-top: 16px;margin-right: 0;}
 	.error-page__info h2{font-size: 22px;margin-bottom: 0;}
 }
