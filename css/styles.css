@@ -1031,6 +1031,9 @@ h3 {
 
 .button:hover, a.button:hover, button.button:hover {background: #e15243;}
 
+.button.red, a.button.red, button.button.red {background: #e15243;}
+.button.red:hover, a.button.red:hover, button.button.red:hover {background: #1796ca;}
+
 .columns {
   position: relative;
 }
@@ -2346,6 +2349,13 @@ ul.history__tabs-list:after{
   max-height: 550px;
   overflow: hidden;
 }
+.contacts.no-info .contacts__cont{
+  display: none;
+}
+.contacts__cont-btn{position: absolute;top: 20px;text-align: center;width: 100%;}
+.contacts .contacts__cont-btn{display: none;}
+.contacts.no-info .contacts__cont-btn,
+.contacts.new_shadow .contacts__cont-btn{display: block;}
 .contacts__cont{
   position: absolute;
   top: 160px;
@@ -2368,6 +2378,18 @@ ul.history__tabs-list:after{
   -webkit-filter: blur(15px);
   filter: blur(15px);
   background-color: #000;
+}
+.new_shadow .contacts__cont,
+.new_shadow .contacts__cont a{
+  color: #191919;
+}
+.new_shadow .contacts__cont a{
+  border: none;
+}
+.new_shadow .contacts__cont:after{
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+  background-color: #A7A4A4;
 }
 .contacts__cont h3{
   font-size: 22px;

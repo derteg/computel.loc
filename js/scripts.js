@@ -484,11 +484,16 @@ $(function(){
 
 (function($){
 	$.fn.mapContacts = function(){
-		   google.maps.event.addDomListener(window, 'load', init);
-		    var map;
-		    function init() {
+		   google.maps.event.addDomListener(window, 'load', initDefault);
+
+		    var map,		    
+				mapCont = $('#mapContact'),
+				centrLat = $('#mapContact').data('lat'),
+				centrLong = $('#mapContact').data('long');
+
+		    function initDefault() {
 		        var mapOptions = {
-		            center: new google.maps.LatLng(55.708867,37.654072900000074),
+		            center: new google.maps.LatLng(centrLat, centrLong),
 		            zoom: 15,
 		            zoomControl: false,
 		            disableDoubleClickZoom: true,
@@ -508,7 +513,7 @@ $(function(){
 		        var mapElement = document.getElementById('mapContact');
 		        var map = new google.maps.Map(mapElement, mapOptions);
 		        var locations = [
-		['Бизнес-центр “Слободской”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.712379, 37.654072900000074, 'img/ico_07.png']
+					['Бизнес-центр “Слободской”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.712379, 37.654072900000074, 'img/ico_07.png']
 		        ];
 		        for (i = 0; i < locations.length; i++) {
 					if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
@@ -526,8 +531,218 @@ $(function(){
 		                email: email,
 		                web: web
 		            });
-		link = '';     }
+					link = '';     
+				}
 
+			    $(window).on('resize', function(){
+		    		window.setTimeout(function() {
+		    			map.panTo(new google.maps.LatLng(centrLat, centrLong));
+		    		}, 400);
+			    });
+			}
+
+			function initMetro() {
+		        var mapOptions = {
+		            center: new google.maps.LatLng(centrLat, centrLong),
+		            zoom: 15,
+		            zoomControl: false,
+		            disableDoubleClickZoom: true,
+		            mapTypeControl: false,
+		            scaleControl: false,
+		            scrollwheel: false,
+		            panControl: false,
+		            streetViewControl: false,
+		            draggable : true,
+		            overviewMapControl: false,
+		            overviewMapControlOptions: {
+		                opened: false,
+		            },
+		            mapTypeId: google.maps.MapTypeId.ROADMAP,
+		            styles: "",
+		        }
+		        var mapElement = document.getElementById('mapContact');
+		        var map = new google.maps.Map(mapElement, mapOptions);
+		        var locations = [
+					['Бизнес-центр “Слободской”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.712379, 37.654072, 'img/ico_07_2.png'],
+					['м. Автозаводская”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.707412, 37.657405, 'img/ico_07_2.png']
+		        ];
+		        for (i = 0; i < locations.length; i++) {
+					if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+					if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+					if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+		           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+		           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+		            marker = new google.maps.Marker({
+		                icon: markericon,
+		                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+		                map: map,
+		                title: locations[i][0],
+		                desc: description,
+		                tel: telephone,
+		                email: email,
+		                web: web
+		            });
+					link = '';     
+				}
+
+				var waypts = [];
+				      directionsService = new google.maps.DirectionsService();
+				      directionsDisplay = new google.maps.DirectionsRenderer({
+				          suppressMarkers: true
+				      });
+				      if (locations.length > 1){
+				          for (var i = 0; i < locations.length; i++) {
+				              waypts.push({
+				                  location:new google.maps.LatLng(locations[i][5], locations[i][6]),
+				                  stopover:true
+				              }); 
+				          };
+				          var request = {
+				              origin: new google.maps.LatLng(locations[0][5], locations[0][6]),
+				              destination: new google.maps.LatLng(locations[locations.length - 1][5], locations[locations.length - 1][6]),
+				              waypoints: waypts,
+				              optimizeWaypoints: true,
+				              travelMode: google.maps.DirectionsTravelMode.DRIVING
+				          };
+				          directionsService.route(request, function(response, status) {
+				              if (status == google.maps.DirectionsStatus.OK) {
+				                  polylineOptions = {
+				                      strokeColor: '#808080',
+				                      strokeWeight: '3'
+				                  }
+				                  directionsDisplay.setOptions({
+				                      polylineOptions: polylineOptions
+				                  });
+				                  directionsDisplay.setDirections(response);
+				              }
+				          });
+				          directionsDisplay.setMap(map);
+				       }
+
+			    $(window).on('resize', function(){
+		    		window.setTimeout(function() {
+		    			map.panTo(new google.maps.LatLng(centrLat, centrLong));
+		    		}, 400);
+			    });
+			}
+
+			function initCar() {
+		        var mapOptions = {
+		            center: new google.maps.LatLng(centrLat, centrLong),
+		            zoom: 15,
+		            zoomControl: false,
+		            disableDoubleClickZoom: true,
+		            mapTypeControl: false,
+		            scaleControl: false,
+		            scrollwheel: false,
+		            panControl: false,
+		            streetViewControl: false,
+		            draggable : true,
+		            overviewMapControl: false,
+		            overviewMapControlOptions: {
+		                opened: false,
+		            },
+		            mapTypeId: google.maps.MapTypeId.ROADMAP,
+		            styles: "",
+		        }
+		        var mapElement = document.getElementById('mapContact');
+		        var map = new google.maps.Map(mapElement, mapOptions);
+		        var locations = [
+					['Бизнес-центр “Слободской”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.712379, 37.654072, 'img/ico_07_2.png'],
+					['3-ьиэ кольцо”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.708639, 37.666796, 'img/ico_07_2.png']
+		        ];
+		        for (i = 0; i < locations.length; i++) {
+					if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+					if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+					if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+		           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+		           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+		            marker = new google.maps.Marker({
+		                icon: markericon,
+		                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+		                map: map,
+		                title: locations[i][0],
+		                desc: description,
+		                tel: telephone,
+		                email: email,
+		                web: web
+		            });
+					link = '';     
+				}
+
+				var waypts = [];
+				directionsService = new google.maps.DirectionsService();
+				directionsDisplay = new google.maps.DirectionsRenderer({
+				  suppressMarkers: true
+				});
+				if (locations.length > 1){
+				  for (var i = 0; i < locations.length; i++) {
+				      waypts.push({
+				          location:new google.maps.LatLng(locations[i][5], locations[i][6]),
+				          stopover:true
+				      }); 
+				  };
+				  var request = {
+				      origin: new google.maps.LatLng(locations[0][5], locations[0][6]),
+				      destination: new google.maps.LatLng(locations[locations.length - 1][5], locations[locations.length - 1][6]),
+				      waypoints: waypts,
+				      optimizeWaypoints: true,
+				      travelMode: google.maps.DirectionsTravelMode.DRIVING
+				  };
+				  directionsService.route(request, function(response, status) {
+				      if (status == google.maps.DirectionsStatus.OK) {
+				          polylineOptions = {
+				              strokeColor: '#808080',
+				              strokeWeight: '3'
+				          }
+				          directionsDisplay.setOptions({
+				              polylineOptions: polylineOptions
+				          });
+				          directionsDisplay.setDirections(response);
+				      }
+				  });
+				  directionsDisplay.setMap(map);
+				}
+
+			    $(window).on('resize', function(){
+		    		window.setTimeout(function() {
+		    			map.panTo(new google.maps.LatLng(centrLat, centrLong));
+		    		}, 400);
+			    });
+			}
+
+		mapSelect();
+
+		function mapSelect(){
+			var btn = $('.js-contact__btn'),
+				contactBtn = mapCont.parent().find('.js-contacts__cont-btn a');
+
+			btn.on('click', function(event){
+				event.preventDefault();
+				var type = $(this).data('type');
+
+				mapCont.parent().addClass('no-info');
+				google.maps.event.trigger(window, 'resize', {});
+
+				if(type == 'car'){ initCar(); }
+				if(type == 'metro'){ initMetro(); }
+
+				$('body').animate({ scrollTop: 0 });
+			});
+
+			contactBtn.on('click',function(event){
+				event.preventDefault();
+				var btnCont = $(this).parents('.contacts');
+
+				btnCont.toggleClass('no-info').toggleClass('new_shadow');
+
+				if(btnCont.hasClass('no-info')) { 
+					$(this).text('Показать контакты');
+				} else {
+					$(this).text('Скрыть контакты');
+				}
+				
+			});
 		}
 	}
 })(jQuery);
