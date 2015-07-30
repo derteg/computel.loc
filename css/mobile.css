@@ -657,6 +657,34 @@
 		max-width: 475px;
 	}
 	.error-page__info{text-align: center;margin-top: 40px;padding: 0;}
+
+	.contacts__cont{top: 198px;}
+	.contacts-info{padding: 38px 0px 40px;background-color: #f6f6f4;}
+	.contacts__accord-cont{padding-top: 64px;}
+	.contacts__accord-cont.metro{background-size: 34px;}
+	.contacts__accord-subtitle p{display: none;}
+	.contacts__accord-title{font-size: 30px;margin-bottom: 10px;}
+	.contacts__accord-dropdown{background-color: #fff;}
+	.contacts__accord-title .place:after{content: ' ';
+		position: absolute;
+		display: block;
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAEAgMAAAA/qM3uAAAACVBMVEUBlcz///8BlcyXRkKrAAAAAnRSTlMAAHaTzTgAAAAUSURBVAgdY1i1gkFrCQPXFAanAAAXDANRQKzKpAAAAABJRU5ErkJggg==') 8px 56% no-repeat;
+		width: 10px;
+		height: 100%;
+		left: 100%;
+		top: 0;
+		padding-left: 8px;
+	}
+	.contacts__accord-cont.opened .place:after{
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjUyQTQ3QzQzNkExMTFFNThBMUFFRjgyMjY3RTg1NUEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjUyQTQ3QzUzNkExMTFFNThBMUFFRjgyMjY3RTg1NUEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyNTJBNDdDMjM2QTExMUU1OEExQUVGODIyNjdFODU1QSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyNTJBNDdDMzM2QTExMUU1OEExQUVGODIyNjdFODU1QSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv+dWOQAAAA1SURBVHjaYmSYdp7hf6YBAwgwTr/wH0SB2CAxxv///yNLwABYARMWCbBGiIpp59El4AAgwABhaxIyian/TAAAAABJRU5ErkJggg==') 8px 50% no-repeat;
+	}
+
+	.contacts__tab{background: none;padding-top: 40px;padding-bottom: 20px;}
+	.contacts__tab-tbl{display: block;line-height: 0;font-size: 0;}
+	.contacts__tab-cell{display: inline-block;vertical-align: top;}
+	.contacts__tab-cell p{margin-bottom: 10px;line-height: 22px;font-size: 12px;}
+	.metro__tab .contacts__tab-cell{width: 100%;}
+	.contact__btn{margin-top: 28px;}
 }
 
 @media only screen and (max-width: 765px){	
@@ -1160,4 +1188,35 @@
 	}
 	.error-page__info{margin-top: 16px;margin-right: 0;}
 	.error-page__info h2{font-size: 22px;margin-bottom: 0;}
+
+	.contacts{max-height: 412px;}
+	#mapContact{height: 434px;}
+	.contacts__cont{padding: 20px 0;top: 144px;margin-left: -160px;max-width: 320px;box-sizing: border-box;}
+	.contacts__cont h3{font-size: 13px;line-height: 20px;margin-bottom: 4px;}
+	.contacts__cont p{font-size: 13px;line-height: 24px;}
+	.contacts__cont .phone{font-size: 22px;margin-top: 20px;margin-bottom: 22px;}
+	.contacts__cont p a{font-size: 13px;}
+
+	.contacts-info{padding: 0;padding-top: 32px;background-color: #f6f6f4;}
+	.contacts-info .inside{padding: 0;}
+	.contacts__accord-cont.metro,
+	.contacts__accord-cont.car{background: none;padding: 0;}
+	.contacts__accord-title{font-size: 20px;line-height: 30px;margin-bottom: 14px;padding: 0 15px;}
+	.contacts__accord-subtitle{padding: 0 15px;padding-bottom: 38px; }
+	.contacts__accord-subtitle h6{font-size: 12px;line-height: 20px;margin-bottom: 26px;}
+	.contacts__accord-title .place{border: none;position: relative;}	
+
+
+	.contacts__accord-dropdown{background-color: #fff;}
+	.contacts__accord-title .place:hover{border:none;}
+	.contacts__accord-cont.opened .contacts__accord-dropdown{padding: 14px 20px;}
+	.contacts__accord-dropdown li{display: block;margin: 0;text-align: center;border:none;margin-top: 6px;}
+	.contacts__accord-dropdown li:hover{border:none;}
+	.contacts__accord-dropdown li:first-child{margin-top: 0;}
+	.contacts__accord-dropdown li:first-child:after{display: none;}
+	.car__tab .contacts__tab-cell{width: 100%;margin-bottom: 20px;}
+	.contacts__tab-cell p.fsz15{font-size: 13px;}
+	
+	.contacts__tab{padding: 32px 15px 20px; background-color: #fff;}
+	.contact__btn{margin-top: 16px; padding-bottom: 20px; background-color: #fff;}
 }

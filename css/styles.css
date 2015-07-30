@@ -664,7 +664,8 @@ h3 {
 }
 .cols {
   position: relative;
-  /*margin-right: -30px;*/
+  font-size: 0;
+  line-height: 0;
 }
 .col {
   display: -moz-inline-stack;
@@ -672,7 +673,6 @@ h3 {
   vertical-align: top;
   *zoom: 1;
   *display: inline;
-  margin-right: -4px;
   position: relative;
 }
 .col-inside {
@@ -1447,7 +1447,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 
 .parts--in {text-align: center; padding: 43px 0 30px 0;}
 .parts--in p {max-width:700px; margin:0 auto; padding-top:20px; font-size:14px; line-height: 24px; padding-top: 25px;}
-.parts--in ul {padding-top:34px;}
+.parts--in ul {padding-top:34px;font-size: 0;line-height: 0;}
 .parts--in .button {margin-top:0px;}
 
 .clnts {text-align: center; padding:45px 0 0}
@@ -1530,8 +1530,8 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 .tag-reset:hover {color:#e15243; border-bottom-color: rgba(225, 83, 67, 0.3);}
 
 
-._prjs {position: relative; margin-left: -6px;margin-right: -14px;}
-.prj {width:33.3%; display: inline-block; box-sizing: border-box;vertical-align: top;position: relative;margin: 10px 0; margin-left: -4px;}
+._prjs {position: relative; margin-left: -10px;margin-right: -10px;line-height: 0;font-size: 0;}
+.prj {width:33.3%; display: inline-block; box-sizing: border-box;vertical-align: top;position: relative;margin: 10px 0; }
 .prj__wrap{display: inline-block;}
 .prj-item {display:block; background: #f6f6f4; padding:35px; border:0; margin: 0 10px;position: relative;height: 100%;box-sizing: border-box;}
 
@@ -2262,7 +2262,9 @@ ul.history__tabs-list:after{
 }
 .error-page__content{
   max-width: 1100px;
+  padding: 0px 20px;
   display: inline-block;  
+  box-sizing: border-box;
 }
 .error-page__info{
   padding-left: 54px;
@@ -2399,7 +2401,12 @@ ul.history__tabs-list:after{
   color: #fff;
   font-size: 15px;
   line-height: 22px;
-  border: none;
+  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+.contacts__cont p a:hover{
+  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 
