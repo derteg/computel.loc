@@ -734,14 +734,9 @@ $(function(){
 				event.preventDefault();
 				var btnCont = $(this).parents('.contacts');
 
-				btnCont.toggleClass('no-info').toggleClass('new_shadow');
+				btnCont.removeClass('no-info');
 
-				if(btnCont.hasClass('no-info')) { 
-					$(this).text('Показать контакты');
-				} else {
-					$(this).text('Скрыть контакты');
-				}
-				
+				initDefault();				
 			});
 		}
 	}
