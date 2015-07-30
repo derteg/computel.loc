@@ -638,8 +638,10 @@
 	.b-search-result .history__tabs-list{width: 70%;}
 	.b-search-result__col{width: 48%;}
 
+	.error-page #wrap{padding-bottom: 70px;}
 	.footer__min{
-		height: 82px;
+		height: 70px;
+		line-height: 70px;
 		margin-top: 0;
 	}
 	.error-page__content{
@@ -1125,8 +1127,10 @@
 	.label{font-size: 12px;padding: 0px 2px;}
 
 
+	.error-page #wrap{padding-bottom: 70px;}
 	.footer__min{
-		height: 82px;
+		height: 70px;
+		line-height: 70px;
 		margin-top: 0;
 		text-align: center;
 	}
@@ -1138,6 +1142,7 @@
 		float: none;
 	}
 	.error-page__content{
+		padding: 0 20px;
 		margin-right: 0;
 	}
 	.error-page__form{
