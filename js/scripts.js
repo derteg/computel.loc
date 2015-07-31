@@ -152,18 +152,28 @@ $(function(){
 	};	
 	
 	function catMenu() {	
-		var $menu = $('.catmenu[data-menu]'),
-			$link = $('[data-menu] .catmenu-link');
+		var $menu = $('#catmenu'),
+			$lnk = $('.catmenu-link', $menu);
 		
-		$link.on('click', function(e){
+		$menu.on('click', '.catmenu-link', function(e){
 			e.preventDefault();
-			var $this = $(this),
-				href = $this.attr('href').replace('#', '');
+			var that = $(this),
+				href  = that.attr('href');
+
+			$lnk.removeClass('active');
+			that.addClass('active');
 			
-			$('html, body').animate({scrollTop: $('[name="'+href+'"]').offset().top}, function(){
-				location.hash = href;
-			});
+			$('body').animate({scrollTop: $(href).offset().top});
 		});
+
+		$(window).on('scroll', function(){
+			var posWin = $(this).scrollTop();
+
+			if(posWin <= 162){
+				$lnk.removeClass('active');
+			}
+			return;
+		})
 	};
 	
 	function numberLists() {
@@ -834,6 +844,8 @@ function clntsMenu(){
 			dots: true,
 			arrows: false,
 			swipe: false,
+			autoplay: true,
+			autoplaySpeed: 3000,
 			responsive: [
 				{
 					breakpoint: 1100,
@@ -851,7 +863,7 @@ function clntsMenu(){
 		var slider = this;
 
 		slider.slick({
-			slidesToShow: 5,
+			slidesToShow: 6,
 			slidesToScroll: 5,
 			infinite: false,
 			arrow: false,

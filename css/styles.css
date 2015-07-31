@@ -677,27 +677,19 @@ h3 {
 }
 .col-inside {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .col--1 {
-  width: 66%;
+  width: 66.6%;
 }
 .col--2 {
-  width: 33%;
+  width: 33.3%;
 }
 .col--3 {
   width: 50%;
 }
 .col--4 {
   width: 100%;
-}
-.col--1 .col-inside,
-.col--3 .col-inside {
-  margin-right: 15px;
-}
-.col--2 .col-inside,
-.col--4 .col-inside {
-  margin-right: 15px;
 }
 .cols--type2 {
   position: relative;
@@ -809,14 +801,16 @@ h3 {
 }
 .prjsmain-cols {
   padding-top: 25px;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 .prjsmain-item {
   position: relative;
-  line-height: 0;
   border: 0;
-  display: block;
+  display: inline-block;
   overflow: hidden;
   height: 100%;
+  margin: 0px 5px;
 }
 .prjsmain-item--bg {
   background: #ebebea;
@@ -920,6 +914,9 @@ h3 {
 }
 .news-item a {
   color: #000000;
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: normal;
   border-color: rgba(0, 0, 0, 0.2);
   padding: 0.2em 0 0 0;
 }
@@ -966,6 +963,7 @@ h3 {
 }
 .partners-item img {
   opacity: 0.5;
+  width: 95%;
   -o-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
@@ -1254,6 +1252,7 @@ a:hover .item-title {color:#e15243}
 .head__col p{font-size: 13px;line-height: 24px;}
 
 .center {text-align: center; font-size:15px; line-height:25px; padding-bottom:40px;}
+.left{text-align: left;}
 .center h3 {font-size:35px; line-height:40px; position: relative; padding-bottom:20px; color:#000; max-width: 800px; margin:0 auto; font-weight: normal;}
 .center p {max-width: 800px; margin:0 auto;}
 
@@ -1294,7 +1293,6 @@ a:hover .part-title {color:#e15243}
 
 
 .licenses {background: #f6f6f4; position: relative; padding-top:50px; padding-bottom:40px; margin-top:-10px;}
-.licenses ul{font-size: 0;line-height: 0;}
 .license {position: relative; display: inline-block;vertical-align: top;width:33.3%;}
 .license-item {position: relative; max-width:330px; display:block; border:0; color:#6b6b6b; font-size:12px; line-height:22px; text-align: center;}
 .license-image {width:auto; max-width:100%; height:auto; background: #fff;  margin-bottom:5px; display:inline-block; text-align: center; padding:15px 0; line-height:0; padding:15px; position: relative;}
@@ -1393,7 +1391,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 
 .vacations a {color:#0195cc; border-bottom:1px solid #cdeaf4;}
 .vacations a:hover {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3);}
-.vacations a.button {margin-top:20px; color:#fff;}
+.vacations .button {margin-top:20px; color:#fff;}
 
 .growth {padding:40px 0 25px;}
 .growth h3 {font-size:35px; line-height:45px; position: relative; font-weight: normal; padding-bottom:15px; color:#000;}
@@ -1664,7 +1662,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 
 .paginator { text-align: center;}
 .paginator__list { display: inline-block; }
-.paginator__lnk { width: 32px; height: 32px; display: inline-block; vertical-align: bottom; text-align: center; background-color: #f6f6f4; color: #282828; border-radius: 2px; line-height: 32px; margin: 0px 5px; opacity: 1; border: none; -moz-transition: color 0.25s, border-color 0.25s, opacity 0.25s; -o-transition: color 0.25s, border-color 0.25s, opacity 0.25s; -webkit-transition: color 0.25s, border-color 0.25s, opacity 0.25s; transition: color 0.25s, border-color 0.25s, opacity 0.25s; }
+.paginator__lnk { width: 32px; height: 32px;font-size: 12px; display: inline-block; vertical-align: bottom; text-align: center; background-color: #f6f6f4; color: #282828; border-radius: 2px; line-height: 32px; margin: 0px 5px; opacity: 1; border: none; -moz-transition: color 0.25s, border-color 0.25s, opacity 0.25s; -o-transition: color 0.25s, border-color 0.25s, opacity 0.25s; -webkit-transition: color 0.25s, border-color 0.25s, opacity 0.25s; transition: color 0.25s, border-color 0.25s, opacity 0.25s; }
 .paginator__lnk:hover { background-color: #e15243; color: #ffffff; }
 .paginator__lnk.current { border-color: transparent; background-color: #1896ca; color: #ffffff; cursor: default;}
 .paginator__lnk .ico { display: inline-block; vertical-align: middle; width: 6px; height: 12px; }

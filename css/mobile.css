@@ -23,7 +23,7 @@
 		padding: 0;
 	}
 	.partners-item img {
-		width: 70%;
+		width: 100%;
 	}
 }
 
@@ -487,7 +487,7 @@
 	.centers .numberredlist-number {width: 35px; height: 35px; line-height: 35px; font-size:14px; left:0;}
 	.centers ol {padding-top:20px;}
 
-	.vacations {padding-top: 40px; padding-bottom: 0px;}
+	.vacations {padding-top: 40px; padding-bottom: 40px;}
 	.vacations .inside {background-size: 70% auto; background-position: right bottom}
 	.vacations-content {width: 70%; font-size: 13px; line-height: 24px; padding-left: 0px; min-height: auto;}
 	.vacations ul {margin-top:40px; font-size:13px}
@@ -568,7 +568,9 @@
 	.service ul{padding: 0;font-size: 13px;}
 	.service ul li{padding-top: 15px;}
 	.service li:after{left: 15px;top: 24px;}
+	.service#cat1 .services__btn{text-align: center;}
 	.service .services__btn{margin-top: 35px;padding: 0;}
+
 	.service--grey .column--40{float: left;}
 	.service--grey .column--60{float: right;}
 	.service--white .column--53 {display: block; width: 100%;padding-left: 0;}
