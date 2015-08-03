@@ -78,10 +78,6 @@
 		color:#191919;
 		width: 270px;
 	}
-	.header-menu.active {
-		display: block;
-		position:fixed;
-	}
 	.header-logo {
 		left: 50%;
 		margin-left:-65px;
@@ -134,11 +130,17 @@
 	}
 	.mainmenu.active {
 		top: 70px;
+		padding-bottom: 70px;
+		box-sizing: border-box;
+		bottom: 0;
+		position: fixed;
+		z-index: 100;
+		overflow-y: auto;
+		display: block;
 		background: #f4f4f4;
+		opacity: 1;
 		-webkit-transition: top 0.3s, opacity 0.3s;
 		transition: top 0.3s, opacity 0.3s;
-		opacity: 1;
-		overflow: visible;
 	}
 
 	.mainmenu.active:after {
@@ -185,12 +187,9 @@
 	.mainmenu-link:focus .mainmenu-text{
 		color: #000;
 		background-color: transparent;
-	}
-	.mainmenu-link .mainmenu-text:hover {
-		color: #fff;
-		background-color: #1796ca;
-	}
+	}	
 	.mainmenu-link.active .mainmenu-text{
+		height: auto;
 		padding-left: 70px;
 		color: #191919;
 		background: transparent url('../img/ico_10.png') 34px 50% no-repeat;
@@ -206,6 +205,9 @@
 	.mainmenu-text:before {
 		margin-top: -3px;
 	}
+	.mainmenu-link.active .submenu{
+		top: 72px;
+	}
 	.submenu {
 		width: auto;
 		max-height: 300px;
@@ -215,8 +217,8 @@
 		position: static;
 		background-color: #f4f4f4;
 		box-shadow: none;
-		border-bottom: 1px solid #e3e3e3;
-		padding-left: 26px 30px 10px;
+
+		padding: 26px 30px 10px;
 	}
 	.submenu-link {
 		vertical-align: top;
@@ -789,14 +791,6 @@
 	}
 	.header-menuIcon {
 		width: 60px;
-	}
-	.header-menuIcon:hover {
-		background-color: #23a5d8;
-		-o-transition: all .35s;
-		-ms-transition: all .35s;
-		-moz-transition: all .35s;
-		-webkit-transition: all .35s;
-		transition: all .35s;
 	}
 	.slider {
 		height: 480px;
