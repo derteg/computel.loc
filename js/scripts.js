@@ -17,10 +17,7 @@ $(function(){
 	
 
 	clntsMenu();
-
-
 	
-
 	// coddy 
 	$('.js-tabs').lightTabs();
 	$('.js-promo__slider').promoSlider();
@@ -105,51 +102,30 @@ $(function(){
 		});	
 	};
 	
-	function mainMenu() {		
-		var $menu = $('.mainmenu'),
-			$link = $('.mainmenu-link', $menu),
-			$submenu = $('.submenu', $menu),
-			$closer = $('.mainmenu-closer', $menu),
-			$icon = $('.header-menuIcon'),
-			win = $(window);
+	function mainMenu() {
+		var $menu = $("#mainmenu"),
+			$link = $('.mainmenu__item', $menu);
+			
+			$("#mainmenu li:has(ul)").addClass("mainmenu_parent");
+			
+			$(".mainmenu__btn", $menu).click( function(){
+					$("#mainmenu > ul").toggleClass("mainmenu_expanded");
+					$(this).toggleClass("mainmenu_parent_exp");
+					return false;
+				}
+			)
+			$(".mainmenu_parent", $menu).click( function(){
+				var $that = $(this);
 
-		$menu.on('click', '.mainmenu-link', function(e){
-			var $this = $(this);
-			$link.removeClass('active');
-			$this.addClass('active');
-		});
+					$that.find(" > ul").toggleClass("mainmenu_expanded");
+					$that.parent().prev().toggleClass('mainmenu_hide');
+					$that.siblings().toggleClass('mainmenu_hide');
+					$that.toggleClass("mainmenu_parent_exp");
 
-		$menu.on('click', '.mainmenu-link.active', function(e){
-			$(this).removeClass('active');
-		});
-		
-		
-		$(window).on('load resize', function(){			
-			var wW = $(this).width();
-			if(wW >= 900){
-				$link.on('mouseenter', function(e){
-					var $this = $(this);
-					$this.addClass('active');
-				});
-
-				$link.on('mouseleave', function(e){
-					var $this = $(this);
-					$this.removeClass('active');
-				});
-			} else {
-				$link.off('mouseenter mouseleave')
-			}
-		});
-
-		$closer.on('click', function(e){
-			$menu.removeClass('active')
-			$link.removeClass('active');
-		});
-		
-		$icon.on('click', function(e){
-			($menu.hasClass('active')) ? $menu.removeClass('active') : $menu.addClass('active')			
-		});
-	};	
+					return false;
+				}
+			)
+	};
 	
 	function catMenu() {	
 		var $menu = $('#catmenu'),
@@ -935,3 +911,48 @@ function clntsMenu(){
 		});
 	}
 })(jQuery);
+
+/*
+	By Osvaldas Valutis, www.osvaldas.info
+	Available for use under the MIT License
+*/
+// (function($, window, document, undefined){
+// 	$.fn.doubleTapToGo = function(params){
+		
+// 		// if( !( 'ontouchstart' in window ) &&
+// 		// 	!navigator.msMaxTouchPoints &&
+// 		// 	!navigator.userAgent.toLowerCase().match( /windows phone os 7/i ) ) return false;
+
+
+// 		this.each( function()
+// 		{
+// 			var curItem = false;
+// 			console.log($(this));
+
+// 			$( this ).on( 'click', function( e )
+// 			{
+// 				console.log(item);
+// 				var item = $( this );
+// 				if( item[ 0 ] != curItem[ 0 ] )
+// 				{
+// 					e.preventDefault();
+// 					curItem = item;
+// 				}
+// 			});
+
+// 			$( document ).on( 'click touchstart MSPointerDown', function( e )
+// 			{
+// 				var resetItem = true,
+// 					parents	  = $( e.target ).parents();
+
+// 				for( var i = 0; i < parents.length; i++ )
+// 					if( parents[ i ] == curItem[ 0 ] )
+// 						resetItem = false;
+
+// 				if( resetItem )
+// 					curItem = false;
+// 			});
+// 		});
+// 		return this;
+// 	};
+// })($, window, document);
