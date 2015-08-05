@@ -77,7 +77,8 @@ $(function(){
 		
 
 		$search.on('click', function(e){
-			e.preventDefault();
+			e.
+			ault();
 			var $target = $(e.target);
 			
 			if ($target.closest('.search-form').length) {}
@@ -108,13 +109,14 @@ $(function(){
 			
 			$("#mainmenu li:has(ul)").addClass("mainmenu_parent");
 			
-			$(".mainmenu__btn", $menu).click( function(){
+			$(".mainmenu__btn", $menu).click( function(event){
+					event.preventDefault();
 					$("#mainmenu > ul").toggleClass("mainmenu_expanded");
 					$(this).toggleClass("mainmenu_parent_exp");
 					return false;
 				}
 			)
-			$(".mainmenu_parent", $menu).click( function(){
+			$menu.on("click", ".mainmenu_parent", function(event){
 				var $that = $(this);
 
 					$that.find(" > ul").toggleClass("mainmenu_expanded");
@@ -122,7 +124,9 @@ $(function(){
 					$that.siblings().toggleClass('mainmenu_hide');
 					$that.toggleClass("mainmenu_parent_exp");
 
-					return false;
+					if(event.target.tagName != 'A') return false;
+
+					$that.trigger('click');
 				}
 			)
 	};
@@ -252,7 +256,7 @@ $(function(){
 		};
 		
 		$wrap.on('click', function(e){
-			e.preventDefault();
+			// e.preventDefault();
 			var $tag = $(e.target).closest('.tag');
 			if ($tag.length) {
 				th.removeTag($tag);
