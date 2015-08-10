@@ -77,8 +77,6 @@ $(function(){
 		
 
 		$search.on('click', function(e){
-			e.
-			ault();
 			var $target = $(e.target);
 			
 			if ($target.closest('.search-form').length) {}
