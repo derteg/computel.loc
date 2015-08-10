@@ -594,8 +594,8 @@
 	.news__promo .press-kit__load{width: auto;}
 
 	.b-search-result{padding: 6px 0 32px;}
-	.b-search-result .history__tabs-list{width: 70%;}
-	.b-search-result__col{width: 48%;}
+	.b-search-result__col{width: 47%;}
+	.b-search-result .b-tabs{margin-top: 20px;}
 
 	.error-page #wrap{padding-bottom: 70px;}
 	.footer__min{
@@ -644,6 +644,44 @@
 	.contacts__tab-cell p{margin-bottom: 10px;line-height: 22px;font-size: 12px;}
 	.metro__tab .contacts__tab-cell{width: 100%;}
 	.contact__btn{margin-top: 28px;}
+
+	.tabs__title{
+		font-size: 13px;
+		color: #000;
+		height: 33px;
+		display: block;
+		border: 1px solid transparent;
+		background: #f9f9f7 url(../img/i-arr.png) 97% 14px no-repeat;
+		padding: 5px 10px;
+		margin: 0 auto;
+		width: 40%;
+		box-sizing: border-box;
+	}
+	.tabs__title.active{background:#fff url(../img/i-arr-2_blue.png) 97% 14px no-repeat;border: 1px solid #e7e7e7;}
+	.tabs__title .history__tabs-dates{width: 40%;}
+	.tabs__title .history__tabs-dates span{line-height: 22px;font-size: 12px;font-weight: normal;text-transform: none;}
+
+	ul.tabs__list{text-align: left; display: none;background: #ffffff;box-shadow: 0 10px 26px rgba(0,0,0,0.15);padding: 0;margin-top: 0;max-height: 250px;overflow:hidden;margin: 0 auto;width: 40%;}
+	.tabs__item{display: block;margin: 0;padding: 6px 15px;border: none;line-height: inherit;}
+	.tabs__item:hover{color: #fff;background: #1796ca;}
+	.b-news__tabs-cont{margin-top: 30px;}
+
+	.history__tabs{margin-top: 20px;}
+	.b-search-result .history__tabs-list{width: 40%;}
+	ul.history__tabs-list{width: 40%;border-bottom: none;margin-bottom: 0;height: auto;box-shadow: 0 10px 26px rgba(0,0,0,0.15)}
+	.history__tabs-item{display: block;padding: 6px 10px;margin: 0 auto;border: none;width: 100%;}
+	.history__tabs-item:hover{background-color: #0195cc;}
+	.history__tabs-item:hover span{color: #fff;}
+	.history__tabs-item:after,
+	.history__tabs-item:before,
+	.history__tabs-item.active:after,
+	.history__tabs-item.active:before{display: none;}
+	.history__tabs-item span{line-height: 22px;text-transform: none; font-size: 12px;font-weight: normal;}
+	.history__cont{margin-top: 30px;}
+
+	.history__tabs-list .history__tabs-dates{width: 40%;}
+
+
 }
 
 @media only screen and (max-width: 765px){	
@@ -1032,9 +1070,6 @@
 	.b-news__slider{margin-bottom: 0;}
 	.b-news__date{margin-bottom: 4px;}
 	.b-news__text{padding-top: 10px;font-size: 12px;}
-	.tabs__list{text-align: left;}
-	.b-news .tabs__list{margin-top: 20px;}
-	.tabs__item{margin: 0px 8px;}
 
 	.press-kit{padding: 30px 0;}
 	.press-kit__text{font-size: 12px;line-height: 20px;margin-bottom: 0;}
@@ -1070,13 +1105,14 @@
 
 	.history{padding-bottom: 22px;padding-top: 30px;}
 	.history h2{font-size: 18px;font-weight: normal;line-height: 40px;}
-	ul.history__tabs-list{height: 44px;margin-bottom: 34px;}
+	
+	/*ul.history__tabs-list{height: 44px;margin-bottom: 34px;}
 	.history__tabs-item span{line-height: 44px;}
 	.history__cont-list li{margin-bottom: 20px;}
 	.history__cont-list .date{font-size: 11px;}
 	.history__cont-list .text{font-size: 12px;padding-left: 48px;line-height: 20px;}
 	.history__cont-list li.important .date{font-size: 11px;}
-	.history__cont-list li.important .text{font-size: 12px;}
+	.history__cont-list li.important .text{font-size: 12px;}*/
 
 	.news__promo{padding: 0;background: #009feb;}
 	.news__promo .inside{padding: 32px 20px 20px;}
@@ -1092,7 +1128,7 @@
 	.b-search__form p{margin-top: 16px;}
 	.history__tabs-list{display: none;}
 
-	.b-search-result__cont{margin-top: 20px;}
+	.b-search-result__cont{margin-top: 30px;}
 	.b-search-result__col:first-child{margin-top: 0;}
 	.b-search-result__col:last-of-type{margin-bottom: 15px;}
 	.b-search-result__col{width: 100%;margin-right: 0;margin-bottom: 0px;margin-top: 46px;}
@@ -1167,4 +1203,10 @@
 	
 	.contacts__tab{padding: 32px 15px 20px; background-color: #fff;}
 	.contact__btn{margin-top: 16px; padding-bottom: 20px; background-color: #fff;}
+
+	.tabs__title{width:100%;}
+	ul.tabs__list{width: 100%;}
+
+	.b-search-result .history__tabs-list{width: 100%;}
+	ul.history__tabs-list{width: 100%;}
 }

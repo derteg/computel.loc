@@ -298,18 +298,19 @@ $(function(){
 	};
 	
 	function clients() {		
-		$('.js-tabs-client__list a').on('click', function(e){
+		$('.js-tabs-client__list a, .js-select-list a').on('click', function(e){
+			var that = $(this);
 			e.preventDefault();
 			
-			$('.js-tabs-client__list a').removeClass('active');
-			$(this).addClass('active');
+			$('.js-tabs-client__list a, .js-select-list a').removeClass('active');
+			that.addClass('active');
 			
-			var group = $(this).attr('href').replace('#', '');
+			var group = that.attr('href').replace('#', '');
 			if (group == 'all') {$('.js-tabs-client__rel').show();}
 			else {
 				$('.js-tabs-client__rel').hide();
 				$('[rel="'+group+'"]').show();
-				}
+			}
 		});		
 	};
 	
@@ -376,9 +377,9 @@ $(function(){
 
 
 	function ajaxMoreBlocks(){
-	    var btn = $('.js-blocks__more');
+		var btn = $('.js-blocks__more');
 
-	    	btn.click(function(e){
+			btn.click(function(e){
 				e.preventDefault();
 				var a = $(this),
 					PREVBLOCK = a.parent().prev('.js-ajax-block__list'),
@@ -406,8 +407,8 @@ $(function(){
 					a.parent().hide();
 					}
 				});			
-	      return false;
-	     });
+		  return false;
+		 });
 	}
 
 
@@ -440,223 +441,262 @@ $(function(){
 
 
 
-
 (function($){				
-    jQuery.fn.lightTabs = function(options){
+	jQuery.fn.lightTabs = function(options){
+		var createTabs = function(){
+			$tabs = $(this),
+			$tabsTitle = $('.js-tabs__title', $tabs),
+			$tabsCont = $('.js-tabs__cont', $tabs),
+			$tabsList = $('.js-tabs__list', $tabs),
+			i = 0,
+			flag = false;
 
-        var createTabs = function(){
-            tabs = this;
-            i = 0;
-            
-            showPage = function(i){
-                $(tabs).children("div").children("div").hide();
-                $(tabs).children("div").children("div").eq(i).show();
-                $(tabs).children("ul").children("li").removeClass("active");
-                $(tabs).children("ul").children("li").eq(i).addClass("active");
-            }
-                                
-            showPage(0);				
-            
-            $(tabs).children("ul").children("li").each(function(index, element){
-                $(element).attr("data-page", i);
-                i++;                        
-            });
-            
-            $(tabs).children("ul").children("li").click(function(){
-                showPage(parseInt($(this).attr("data-page")));
-                	
-                $('.js-height_adjust').heightAdjustment();
-            });				
-        };		
-        return this.each(createTabs);
-    };	
+			$(window).on('load resize', function() {
+			    var wW = $(this).width();
+
+			    if(wW <= 960){
+			    	if(flag == true){
+			    		return;
+			    	}
+			    	flag = true;
+
+			    	$tabsTitle.show();
+			    	$tabsList.hide();
+
+			    	$tabs.on('click', '.js-tabs__title', function(event){
+			    		$tabsList.slideToggle();
+			    		$(this).toggleClass('active');
+			    	});
+
+			    	$tabsList.on('click', 'li', function(event){
+			    		$tabsTitle.toggleClass('active');
+			    		$tabsTitle.html($(this).html());
+			    		$tabsList.slideToggle();
+			    	});
+			    } else if(wW > 960){
+			    	flag = false;
+
+			    	$tabsTitle.hide();
+			    	$tabsList.show();
+
+			    	$tabs.off('click');
+			    	$tabsList.off('click');
+			    }
+			});
+
+
+			
+			showPage = function(i){
+				$tabsCont.children("div").hide();
+				$tabsCont.children("div").eq(i).show();
+				$tabsList.children("li").removeClass("active");
+				$tabsList.children("li").eq(i).addClass("active");
+			}
+								
+			showPage(0);	
+			
+			$tabsList.children("li").each(function(index, element){
+				$(element).attr("data-page", i);
+				i++;                        
+			});
+			
+			$tabsList.children("li").click(function(){
+				showPage(parseInt($(this).attr("data-page")));
+					
+				$('.js-height_adjust').heightAdjustment();
+			});				
+		};		
+		return this.each(createTabs);
+
+		
+	};	
 })(jQuery);
 
 (function($){
 	$.fn.mapContacts = function(){
 		   google.maps.event.addDomListener(window, 'load', initDefault);
 
-		    var map,		    
+			var map,		    
 				mapCont = $('#mapContact'),
 				centrLat = $('#mapContact').data('lat'),
 				centrLong = $('#mapContact').data('long');
 
-		    function initDefault() {
-		        var mapOptions = {
-		            center: new google.maps.LatLng(centrLat, centrLong),
-		            zoom: 15,
-		            zoomControl: false,
-		            disableDoubleClickZoom: true,
-		            mapTypeControl: false,
-		            scaleControl: false,
-		            scrollwheel: false,
-		            panControl: false,
-		            streetViewControl: false,
-		            draggable : true,
-		            overviewMapControl: false,
-		            overviewMapControlOptions: {
-		                opened: false,
-		            },
-		            mapTypeId: google.maps.MapTypeId.ROADMAP,
-		            styles: [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.4}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}],
-		        }
-		        var mapElement = document.getElementById('mapContact');
-		        var map = new google.maps.Map(mapElement, mapOptions);
-		        var locations = [
+			function initDefault() {
+				var mapOptions = {
+					center: new google.maps.LatLng(centrLat, centrLong),
+					zoom: 15,
+					zoomControl: false,
+					disableDoubleClickZoom: true,
+					mapTypeControl: false,
+					scaleControl: false,
+					scrollwheel: false,
+					panControl: false,
+					streetViewControl: false,
+					draggable : true,
+					overviewMapControl: false,
+					overviewMapControlOptions: {
+						opened: false,
+					},
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					styles: [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.4}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}],
+				}
+				var mapElement = document.getElementById('mapContact');
+				var map = new google.maps.Map(mapElement, mapOptions);
+				var locations = [
 					['Бизнес-центр “Слободской”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.712379, 37.654072900000074, 'img/ico_07.png']
-		        ];
-		        for (i = 0; i < locations.length; i++) {
+				];
+				for (i = 0; i < locations.length; i++) {
 					if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
 					if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
 					if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
-		           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
-		           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
-		            marker = new google.maps.Marker({
-		                icon: markericon,
-		                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
-		                map: map,
-		                title: locations[i][0],
-		                desc: description,
-		                tel: telephone,
-		                email: email,
-		                web: web
-		            });
+				   if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+				   if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+					marker = new google.maps.Marker({
+						icon: markericon,
+						position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+						map: map,
+						title: locations[i][0],
+						desc: description,
+						tel: telephone,
+						email: email,
+						web: web
+					});
 					link = '';     
 				}
 
-			    $(window).on('resize', function(){
-		    		window.setTimeout(function() {
-		    			map.panTo(new google.maps.LatLng(centrLat, centrLong));
-		    		}, 400);
-			    });
+				$(window).on('resize', function(){
+					window.setTimeout(function() {
+						map.panTo(new google.maps.LatLng(centrLat, centrLong));
+					}, 400);
+				});
 			}
 
 			function initMetro() {
-		        var mapOptions = {
-		            center: new google.maps.LatLng(centrLat, centrLong),
-		            zoom: 15,
-		            zoomControl: false,
-		            disableDoubleClickZoom: true,
-		            mapTypeControl: false,
-		            scaleControl: false,
-		            scrollwheel: false,
-		            panControl: false,
-		            streetViewControl: false,
-		            draggable : true,
-		            overviewMapControl: false,
-		            overviewMapControlOptions: {
-		                opened: false,
-		            },
-		            mapTypeId: google.maps.MapTypeId.ROADMAP,
-		            styles: "",
-		        }
-		        var mapElement = document.getElementById('mapContact');
-		        var map = new google.maps.Map(mapElement, mapOptions);
-		        var locations = [
+				var mapOptions = {
+					center: new google.maps.LatLng(centrLat, centrLong),
+					zoom: 15,
+					zoomControl: false,
+					disableDoubleClickZoom: true,
+					mapTypeControl: false,
+					scaleControl: false,
+					scrollwheel: false,
+					panControl: false,
+					streetViewControl: false,
+					draggable : true,
+					overviewMapControl: false,
+					overviewMapControlOptions: {
+						opened: false,
+					},
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					styles: "",
+				}
+				var mapElement = document.getElementById('mapContact');
+				var map = new google.maps.Map(mapElement, mapOptions);
+				var locations = [
 					['Бизнес-центр “Слободской”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.712379, 37.654072, 'img/ico_07_2.png'],
 					['м. Автозаводская”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.707412, 37.657405, 'img/ico_07_2.png']
-		        ];
-		        for (i = 0; i < locations.length; i++) {
+				];
+				for (i = 0; i < locations.length; i++) {
 					if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
 					if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
 					if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
-		           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
-		           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
-		            marker = new google.maps.Marker({
-		                icon: markericon,
-		                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
-		                map: map,
-		                title: locations[i][0],
-		                desc: description,
-		                tel: telephone,
-		                email: email,
-		                web: web
-		            });
+				   if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+				   if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+					marker = new google.maps.Marker({
+						icon: markericon,
+						position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+						map: map,
+						title: locations[i][0],
+						desc: description,
+						tel: telephone,
+						email: email,
+						web: web
+					});
 					link = '';     
 				}
 
 				var waypts = [];
-				      directionsService = new google.maps.DirectionsService();
-				      directionsDisplay = new google.maps.DirectionsRenderer({
-				          suppressMarkers: true
-				      });
-				      if (locations.length > 1){
-				          for (var i = 0; i < locations.length; i++) {
-				              waypts.push({
-				                  location:new google.maps.LatLng(locations[i][5], locations[i][6]),
-				                  stopover:true
-				              }); 
-				          };
-				          var request = {
-				              origin: new google.maps.LatLng(locations[0][5], locations[0][6]),
-				              destination: new google.maps.LatLng(locations[locations.length - 1][5], locations[locations.length - 1][6]),
-				              waypoints: waypts,
-				              optimizeWaypoints: true,
-				              travelMode: google.maps.DirectionsTravelMode.DRIVING
-				          };
-				          directionsService.route(request, function(response, status) {
-				              if (status == google.maps.DirectionsStatus.OK) {
-				                  polylineOptions = {
-				                      strokeColor: '#808080',
-				                      strokeWeight: '3'
-				                  }
-				                  directionsDisplay.setOptions({
-				                      polylineOptions: polylineOptions
-				                  });
-				                  directionsDisplay.setDirections(response);
-				              }
-				          });
-				          directionsDisplay.setMap(map);
-				       }
+					  directionsService = new google.maps.DirectionsService();
+					  directionsDisplay = new google.maps.DirectionsRenderer({
+						  suppressMarkers: true
+					  });
+					  if (locations.length > 1){
+						  for (var i = 0; i < locations.length; i++) {
+							  waypts.push({
+								  location:new google.maps.LatLng(locations[i][5], locations[i][6]),
+								  stopover:true
+							  }); 
+						  };
+						  var request = {
+							  origin: new google.maps.LatLng(locations[0][5], locations[0][6]),
+							  destination: new google.maps.LatLng(locations[locations.length - 1][5], locations[locations.length - 1][6]),
+							  waypoints: waypts,
+							  optimizeWaypoints: true,
+							  travelMode: google.maps.DirectionsTravelMode.DRIVING
+						  };
+						  directionsService.route(request, function(response, status) {
+							  if (status == google.maps.DirectionsStatus.OK) {
+								  polylineOptions = {
+									  strokeColor: '#808080',
+									  strokeWeight: '3'
+								  }
+								  directionsDisplay.setOptions({
+									  polylineOptions: polylineOptions
+								  });
+								  directionsDisplay.setDirections(response);
+							  }
+						  });
+						  directionsDisplay.setMap(map);
+					   }
 
-			    $(window).on('resize', function(){
-		    		window.setTimeout(function() {
-		    			map.panTo(new google.maps.LatLng(centrLat, centrLong));
-		    		}, 400);
-			    });
+				$(window).on('resize', function(){
+					window.setTimeout(function() {
+						map.panTo(new google.maps.LatLng(centrLat, centrLong));
+					}, 400);
+				});
 			}
 
 			function initCar() {
-		        var mapOptions = {
-		            center: new google.maps.LatLng(centrLat, centrLong),
-		            zoom: 15,
-		            zoomControl: false,
-		            disableDoubleClickZoom: true,
-		            mapTypeControl: false,
-		            scaleControl: false,
-		            scrollwheel: false,
-		            panControl: false,
-		            streetViewControl: false,
-		            draggable : true,
-		            overviewMapControl: false,
-		            overviewMapControlOptions: {
-		                opened: false,
-		            },
-		            mapTypeId: google.maps.MapTypeId.ROADMAP,
-		            styles: "",
-		        }
-		        var mapElement = document.getElementById('mapContact');
-		        var map = new google.maps.Map(mapElement, mapOptions);
-		        var locations = [
+				var mapOptions = {
+					center: new google.maps.LatLng(centrLat, centrLong),
+					zoom: 15,
+					zoomControl: false,
+					disableDoubleClickZoom: true,
+					mapTypeControl: false,
+					scaleControl: false,
+					scrollwheel: false,
+					panControl: false,
+					streetViewControl: false,
+					draggable : true,
+					overviewMapControl: false,
+					overviewMapControlOptions: {
+						opened: false,
+					},
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					styles: "",
+				}
+				var mapElement = document.getElementById('mapContact');
+				var map = new google.maps.Map(mapElement, mapOptions);
+				var locations = [
 					['Бизнес-центр “Слободской”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.712379, 37.654072, 'img/ico_07_2.png'],
 					['3-ьиэ кольцо”, 3-й этаж', 'undefined', 'undefined', 'undefined', 'undefined', 55.708639, 37.666796, 'img/ico_07_2.png']
-		        ];
-		        for (i = 0; i < locations.length; i++) {
+				];
+				for (i = 0; i < locations.length; i++) {
 					if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
 					if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
 					if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
-		           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
-		           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
-		            marker = new google.maps.Marker({
-		                icon: markericon,
-		                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
-		                map: map,
-		                title: locations[i][0],
-		                desc: description,
-		                tel: telephone,
-		                email: email,
-		                web: web
-		            });
+				   if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+				   if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+					marker = new google.maps.Marker({
+						icon: markericon,
+						position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+						map: map,
+						title: locations[i][0],
+						desc: description,
+						tel: telephone,
+						email: email,
+						web: web
+					});
 					link = '';     
 				}
 
@@ -667,38 +707,38 @@ $(function(){
 				});
 				if (locations.length > 1){
 				  for (var i = 0; i < locations.length; i++) {
-				      waypts.push({
-				          location:new google.maps.LatLng(locations[i][5], locations[i][6]),
-				          stopover:true
-				      }); 
+					  waypts.push({
+						  location:new google.maps.LatLng(locations[i][5], locations[i][6]),
+						  stopover:true
+					  }); 
 				  };
 				  var request = {
-				      origin: new google.maps.LatLng(locations[0][5], locations[0][6]),
-				      destination: new google.maps.LatLng(locations[locations.length - 1][5], locations[locations.length - 1][6]),
-				      waypoints: waypts,
-				      optimizeWaypoints: true,
-				      travelMode: google.maps.DirectionsTravelMode.DRIVING
+					  origin: new google.maps.LatLng(locations[0][5], locations[0][6]),
+					  destination: new google.maps.LatLng(locations[locations.length - 1][5], locations[locations.length - 1][6]),
+					  waypoints: waypts,
+					  optimizeWaypoints: true,
+					  travelMode: google.maps.DirectionsTravelMode.DRIVING
 				  };
 				  directionsService.route(request, function(response, status) {
-				      if (status == google.maps.DirectionsStatus.OK) {
-				          polylineOptions = {
-				              strokeColor: '#808080',
-				              strokeWeight: '3'
-				          }
-				          directionsDisplay.setOptions({
-				              polylineOptions: polylineOptions
-				          });
-				          directionsDisplay.setDirections(response);
-				      }
+					  if (status == google.maps.DirectionsStatus.OK) {
+						  polylineOptions = {
+							  strokeColor: '#808080',
+							  strokeWeight: '3'
+						  }
+						  directionsDisplay.setOptions({
+							  polylineOptions: polylineOptions
+						  });
+						  directionsDisplay.setDirections(response);
+					  }
 				  });
 				  directionsDisplay.setMap(map);
 				}
 
-			    $(window).on('resize', function(){
-		    		window.setTimeout(function() {
-		    			map.panTo(new google.maps.LatLng(centrLat, centrLong));
-		    		}, 400);
-			    });
+				$(window).on('resize', function(){
+					window.setTimeout(function() {
+						map.panTo(new google.maps.LatLng(centrLat, centrLong));
+					}, 400);
+				});
 			}
 
 		mapSelect();
@@ -740,8 +780,8 @@ $(function(){
 			$dropdown = $('.contacts__accord-dropdown', $cont);
 
 			$('html').on('click', function(e){
-		      	$cont.addClass('closed').removeClass('opened');
-		    });
+				$cont.addClass('closed').removeClass('opened');
+			});
 
 			$btn.on('click', function(event){
 				event.stopPropagation();

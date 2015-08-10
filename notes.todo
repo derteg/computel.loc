@@ -1,0 +1,10 @@
+Tabs01:
+ ✔ http://localhost/computel.loc/company_03_clients.html @done (15-08-10 17:23)
+Tabs02:
+ ✔ http://localhost/computel.loc/press_01_news.html @done (15-08-10 16:07)
+ ✔ http://localhost/computel.loc/press_03_press.html @done (15-08-10 16:07)
+Tabs03:
+ ☐ http://localhost/computel.loc/press_02_presskit.html
+ ☐ http://localhost/computel.loc/search_result.html
+TabsNonTabs: 
+ ☐ http://localhost/computel.loc/projects.html

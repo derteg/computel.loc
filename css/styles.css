@@ -495,7 +495,7 @@ h3 {
   .mainmenu__item:last-child .mainmenu__lnk{
     padding-right: 25px;
   }
-  .submenu__list {
+  ul.submenu__list {
     position: absolute;
     background: #ffffff;
     padding: 26px 30px 20px;
@@ -530,16 +530,17 @@ h3 {
   .submenu__item span{
     background-color: #fff;
     color: #191919;
-    outline: #fff solid 3px;
     text-transform: none;
     padding: 4px 0;
     line-height: 24px;
   }
   .submenu__item.current span,
+  .submenu__item.current:hover span{
+    font-weight: bold;
+    color: #191919;
+  }
   .submenu__item:hover span{
-    background: #e15243;
-    outline: #e15243 solid 3px;
-    color: #ffffff;
+    color: #0195cc;
   }
   .submenu__item span em{
     font-style: normal;
@@ -1622,9 +1623,9 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 .select {width:260px; display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin-right:5px; position: relative; height:33px; border:1px solid #e7e7e7; background: url(../img/logos/i-arrow.png) no-repeat right 10px center; cursor: pointer; z-index:8;}
 .select-val {font-size:13px; color:#000; padding-left:15px; margin-right:25px; line-height:35px; white-space: nowrap; overflow: hidden;}
 .select-list {background: #ffffff; box-shadow: 0 10px 26px rgba(0,0,0,0.15); z-index:7; font-family: 'PT Sans', sans-serif; font-size:12px; max-height:250px; overflow: hidden; display:none;}
-.select-list li {padding:6px 15px;}
-.select-list li:hover {color:#fff; background: #1796ca;}
-.scrollpane {}
+
+.select-list li a{padding:6px 15px;display: block;color: #191919;text-decoration: none;border: none;}
+.select-list li a:hover {color:#fff; background: #1796ca;}
 
 .add {background: #f6f6f4; height:35px; display: inline-block;vertical-align: top;*zoom: 1;*display: inline; width:260px; position: relative; font-size:13px; color:#000; text-align: left; text-indent: 15px; line-height:35px; cursor: pointer;}
 .add:after {content:'+'; color:#1996ca; position: absolute; font-size:18px; right:10px; top:0; line-height:35px; font-weight: bold;}
@@ -1639,11 +1640,11 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 
 
 
+.tabs__title{display: none;}
 .tabs__list {position: relative; text-align: center; padding-bottom:35px; margin-top:-8px;}
-.tabs__item{display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin: 0 13px;}
-.tabs__lnk{color:#1896ca; border-bottom:1px dotted #1896ca; line-height:1em; font-size:12px;text-decoration: none;}
-.tabs__item .tabs__lnk:hover {color:#e15243; border-color:rgba(225, 83, 67, 0.3);}
-.tabs__item.active .tabs__lnk {border:0; color:#000000;}
+.tabs__item{display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin: 0 13px;color:#1896ca; border-bottom:1px dotted #1896ca; line-height:1em; font-size:12px;text-decoration: none;cursor: pointer;}
+.tabs__item:hover {color:#e15243; border-color:rgba(225, 83, 67, 0.3);}
+.tabs__item.active {border:0; color:#000000;cursor: default;}
 
 .paginator { text-align: center;}
 .paginator__list { display: inline-block; }
@@ -1971,7 +1972,7 @@ ul.history__tabs-list:after{
   box-sizing: border-box;
   border-bottom: 4px solid #000;
 }
-.history__tabs-item div{  
+.history__tabs-dates{  
   text-align: justify;
   line-height: 0;
   font-size: 1px;
@@ -1980,7 +1981,7 @@ ul.history__tabs-list:after{
   text-align-last: justify;
   position: relative;
 }
-.history__tabs-item div:after{
+.history__tabs-dates:after{
   width: 100%;
   height: 0px;
   visibility: hidden;
@@ -2014,7 +2015,7 @@ ul.history__tabs-list:after{
 .history__tabs-item.active:hover{
   cursor: default;
 }
-.history__tabs-item span{
+.history__tabs-dates span{
   display: inline-block;
   text-align: center;
   line-height: 80px;
@@ -2025,7 +2026,7 @@ ul.history__tabs-list:after{
   position: relative;
   vertical-align: middle;
 }
-.history__tabs-item .sep{
+.history__tabs-dates .sep{
   width: 19px;
   height: 2px;
   background-color: #cfcfcf;  
@@ -2835,3 +2836,13 @@ ul.history__tabs-list:after{
 .jspTrack {background: none;}
 .jspDrag {width: 8px; background: #888; background: rgba(0,0,0,0.5); -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px;}
 .jspPane {width:100% !important;}
+
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .footer-tel{
+    background-image: url('../img/icons-sprite@2x.png');
+    background-size: 32px 38px;
+  }
+}
