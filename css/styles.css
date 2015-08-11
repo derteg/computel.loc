@@ -484,10 +484,12 @@ h3 {
     right: 20px;
     top: 50%;
     margin-top: -3px;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAEAgMAAAA/qM3uAAAACVBMVEUBlcz///8BlcyXRkKrAAAAAnRSTlMAAHaTzTgAAAAUSURBVAgdY1i1gkFrCQPXFAanAAAXDANRQKzKpAAAAABJRU5ErkJggg==') top center no-repeat;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAICAYAAADJEc7MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjFCOTczRjQzRjhGMTFFNTkwODRGNDJBRTI2ODlFMjUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjFCOTczRjUzRjhGMTFFNTkwODRGNDJBRTI2ODlFMjUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyMUI5NzNGMjNGOEYxMUU1OTA4NEY0MkFFMjY4OUUyNSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyMUI5NzNGMzNGOEYxMUU1OTA4NEY0MkFFMjY4OUUyNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkbEXVkAAABBSURBVHjaYmSYdv4/AxmACYgZydDHyARjkKIJZiMDCZoZkZ3KQKRmRnQ/MhChmRFb4BAyHasrGP//Jys2GAACDAD5jwV8m3k7lAAAAABJRU5ErkJggg==') top center no-repeat;
+    background-size: 7px 4px;
   }
   .mainmenu__item:hover .mainmenu__lnk:before{
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAEAQMAAAB4CLc+AAAABlBMVEX///////9VfPVsAAAAAXRSTlMAQObYZgAAABBJREFUCB1jEGCwYKhh+AcABAIBw73yZxgAAAAASUVORK5CYII=') top center no-repeat;    
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAICAYAAADJEc7MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjFBNTc0REYzRjhGMTFFNTlGNTQ5RDA0NkQ4MjAzNEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjFBNTc0RTAzRjhGMTFFNTlGNTQ5RDA0NkQ4MjAzNEYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2MUE1NzRERDNGOEYxMUU1OUY1NDlEMDQ2RDgyMDM0RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2MUE1NzRERTNGOEYxMUU1OUY1NDlEMDQ2RDgyMDM0RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjtFQRMAAAA4SURBVHjaYvz//z8DOYAJj9x/KCZJ438cbLwa/xMjxkSEJqxyTERqwlDDRIImFM1MJGqCawYIMAAm0hD/G1l2twAAAABJRU5ErkJggg==') top center no-repeat;
+    background-size: 7px 4px;
   }
   .mainmenu__item:last-child .mainmenu__lnk:before{
     display: none;
@@ -2852,7 +2854,7 @@ ul.history__tabs-list:after{
 
 
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
   .footer-tel{
     background-image: url('../img/icons-sprite@2x.png');
     background-size:23px 73px;
@@ -2882,5 +2884,17 @@ ul.history__tabs-list:after{
   .mainmenu__btn.mainmenu_parent_exp{
    background: url(../img/i-menu_hov@2x) center no-repeat; 
    background-size:20px 14px;
+  }
+  .tag{
+    background: #f6f6f4 url('../img/logos/i-crosses@2x.png') no-repeat;
+    background-size: 12px 30px;
+    background-position: right 11px;
+  }
+  .tag:hover,
+  .tag:focus,
+  .tag:active{
+    background: #e15243 url('../img/logos/i-crosses@2x.png') no-repeat;
+    background-size: 12px 30px;
+    background-position: right -12px;
   }
 }
