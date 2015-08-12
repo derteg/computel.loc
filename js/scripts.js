@@ -1,7 +1,16 @@
 $(function(){
+
+	var resizeId;
+
+	$(window).load(mainMenu);
+
+	$(window).resize(function() {
+	    clearTimeout(resizeId);
+	    resizeId = setTimeout(mainMenu, 500);
+	});
+
 	centerSliderContent();
 	searchHeader();
-	mainMenu();
 	catMenu();
 	numberLists();
 	scrollpane();
@@ -101,33 +110,49 @@ $(function(){
 		});	
 	};
 	
-	function mainMenu() {
-		var $menu = $("#mainmenu"),
-			$link = $('.mainmenu__item', $menu);
-			
-			$("#mainmenu li:has(ul)").addClass("mainmenu_parent");
-			
-			$(".mainmenu__btn", $menu).click( function(event){
-					event.preventDefault();
-					$("#mainmenu > ul").toggleClass("mainmenu_expanded");
-					$(this).toggleClass("mainmenu_parent_exp");
-					return false;
-				}
-			)
-			$menu.on("click", ".mainmenu_parent", function(event){
-				var $that = $(this);
 
-					$that.find(" > ul").toggleClass("mainmenu_expanded");
-					$that.parent().prev().toggleClass('mainmenu_hide');
-					$that.siblings().toggleClass('mainmenu_hide');
-					$that.toggleClass("mainmenu_parent_exp");
 
-					if(event.target.tagName != 'A') return false;
+		function mainMenu() {
+			var $menu = $("#mainmenu"),
+				$link = $('.mainmenu__item', $menu),
+				wW = $(window).width(),
+				flag = false;
 
-					$that.trigger('click');
-				}
-			)
-	};
+					if(wW <= 960){
+						if(flag == true){
+							return;
+						}
+						flag = true;
+
+						$("li:has(ul)", $menu).addClass("mainmenu_parent");
+
+						$menu.on('click', ".mainmenu__btn", btnClick);
+						$menu.on("click", ".mainmenu_parent", parentItemDone);
+					} else {
+						flag = false;
+						$menu.off('click', ".mainmenu__btn");
+						$menu.off("click", ".mainmenu_parent");
+					}
+
+					function btnClick(event){
+						$("#mainmenu > ul").toggleClass("mainmenu_expanded");
+						$(this).toggleClass("mainmenu_parent_exp");
+						return false;
+					}
+
+					function parentItemDone(event){
+						var $that = $(this);
+
+							$that.find(" > ul").toggleClass("mainmenu_expanded");
+							$that.parent().prev().toggleClass('mainmenu_hide');
+							$that.siblings().toggleClass('mainmenu_hide');
+							$that.toggleClass("mainmenu_parent_exp");
+
+							if(event.target.tagName != 'A') return false;
+							
+							$that.trigger('click');
+					}
+		};
 	
 	function catMenu() {	
 		var $menu = $('#catmenu'),
