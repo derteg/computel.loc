@@ -2,13 +2,25 @@ $(function(){
 
 	var resizeId;
 
-	$(window).load(mainMenu);
+	$(window).load(mainMenuResize);
 
 	$(window).resize(function() {
 	    clearTimeout(resizeId);
-	    resizeId = setTimeout(mainMenu, 500);
+	    resizeId = setTimeout(mainMenuResize, 500);
 	});
 
+	function mainMenuResize(){
+		var $all = $('.mainmenu *'),
+			$winW = $(window).width();
+
+		if($winW > 960){
+			$all.removeClass('mainmenu_expanded mainmenu_parent_exp mainmenu__hide');			
+		} else {
+			
+		}
+	}
+
+	// mainMenu();
 	centerSliderContent();
 	searchHeader();
 	catMenu();
@@ -41,6 +53,43 @@ $(function(){
 	$(window).on('load resize', function() {
 		$('.js-height_adjust').heightAdjustment();
 	});
+
+	(function mainMenu() {
+		var $menu = $(".mainmenu"),
+			$link = $('.mainmenu__item', $menu),
+			wW = $(window).width();
+
+			$("li:has(ul)", $menu).addClass("mainmenu_parent");
+
+			$('.mainmenu__btn', $menu).click(btnClick);
+			$('.mainmenu_parent', $menu).click(parentItemDone);
+
+			function btnClick(event){
+				$("#mainmenu > ul").toggleClass("mainmenu_expanded");
+				$(this).toggleClass("mainmenu_parent_exp");
+
+				return false;				
+			}
+
+			function parentItemDone(event){	
+				var $that = $(this);
+				var target = $(event.target);
+
+				$that
+					.siblings()
+					.toggleClass('mainmenu__hide')
+				.end()
+					.toggleClass("mainmenu_parent_exp")
+					.find(" > ul")
+					.toggleClass("mainmenu_expanded")
+				.end()
+					.parent()
+					.prev(':not(.mainmenu__btn)')
+					.toggleClass('mainmenu__hide');
+					
+				if(target.next('ul').length){ return false; }
+			}
+	})();
 
 	
 	function centerSliderContent() {
@@ -109,65 +158,6 @@ $(function(){
 			hideForm();
 		});	
 	};
-	
-
-
-		function mainMenu() {
-			var $menu = $("#mainmenu"),
-				$link = $('.mainmenu__item', $menu),
-				wW = $(window).width(),
-				flag = false;
-
-					if(wW <= 960){
-						if(flag == true){
-							return
-						}
-						flag = true;
-
-						$("li:has(ul)", $menu).addClass("mainmenu_parent");
-						$('.mainmenu__item').css('display', 'block');
-
-						$menu.on('click', ".mainmenu__btn", btnClick);
-						$menu.on("click", ".mainmenu_parent", parentItemDone);
-					} else {
-						flag = false;
-
-						// $('.mainmenu__item')
-						// 	.css('display', 'inline-block')
-						// 	.find('.mainmenu__lnk')
-						// 	.css('display', 'block');
-
-						// $('*', $menu).removeClass('mainmenu_expanded, mainmenu_parent_exp, mainmenu_parent');
-
-						$menu.off('click', ".mainmenu__btn");
-						$menu.off("click", ".mainmenu_parent");
-					}
-
-					function btnClick(event){
-						$("#mainmenu > ul").toggleClass("mainmenu_expanded");
-						$(this).toggleClass("mainmenu_parent_exp");
-						return false;
-					}
-
-					function parentItemDone(event){
-						var $that = $(this);
-						var target = $(event.target);
-
-					$that
-						.siblings()
-						.toggle()
-					.end()
-						.toggleClass("mainmenu_parent_exp")
-						.find(" > ul")
-						.toggleClass("mainmenu_expanded")
-					.end()
-						.parent()
-						.prev(':not(.mainmenu__btn)')
-						.toggle();
-						
-						if(target.next('ul').length){ return false; }
-					}
-		};
 	
 	function catMenu() {	
 		var $menu = $('#catmenu'),
