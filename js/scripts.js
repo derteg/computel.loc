@@ -120,16 +120,25 @@ $(function(){
 
 					if(wW <= 960){
 						if(flag == true){
-							return;
+							return
 						}
 						flag = true;
 
 						$("li:has(ul)", $menu).addClass("mainmenu_parent");
+						$('.mainmenu__item').css('display', 'block');
 
 						$menu.on('click', ".mainmenu__btn", btnClick);
 						$menu.on("click", ".mainmenu_parent", parentItemDone);
 					} else {
 						flag = false;
+
+						// $('.mainmenu__item')
+						// 	.css('display', 'inline-block')
+						// 	.find('.mainmenu__lnk')
+						// 	.css('display', 'block');
+
+						// $('*', $menu).removeClass('mainmenu_expanded, mainmenu_parent_exp, mainmenu_parent');
+
 						$menu.off('click', ".mainmenu__btn");
 						$menu.off("click", ".mainmenu_parent");
 					}
@@ -142,15 +151,21 @@ $(function(){
 
 					function parentItemDone(event){
 						var $that = $(this);
+						var target = $(event.target);
 
-							$that.find(" > ul").toggleClass("mainmenu_expanded");
-							$that.parent().prev().toggleClass('mainmenu_hide');
-							$that.siblings().toggleClass('mainmenu_hide');
-							$that.toggleClass("mainmenu_parent_exp");
-
-							if(event.target.tagName != 'A') return false;
-							
-							$that.trigger('click');
+					$that
+						.siblings()
+						.toggle()
+					.end()
+						.toggleClass("mainmenu_parent_exp")
+						.find(" > ul")
+						.toggleClass("mainmenu_expanded")
+					.end()
+						.parent()
+						.prev(':not(.mainmenu__btn)')
+						.toggle();
+						
+						if(target.next('ul').length){ return false; }
 					}
 		};
 	
