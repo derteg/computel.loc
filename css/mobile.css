@@ -14,7 +14,7 @@
 		width: 100%;
 	}
 	.mainmenu__list{
-		left: 160px;
+		left: 150px;
 	}
 	.mainmenu__lnk{
 		padding-left: 10px;
@@ -80,6 +80,8 @@
 		border-bottom: 1px solid #fff;
 		-webkit-box-shadow: inset 0px -1px 1px 0px rgba(227,227,227,1);
 		box-shadow: inset 0px -1px 1px 0px rgba(227,227,227,1);
+		-webkit-transition: none;
+		transition: none;
 	}
 	li.mainmenu_parent_exp > a.mainmenu__hide{
 		display: none;
@@ -385,7 +387,7 @@
 
 
 	.polite {height:380px;}
-	.polite-content {width:520px; font-size: 14px; margin-left:-245px}
+	.polite-content {width:520px; font-size: 14px;}
 	.polite-title:after {width: 55px; background-size: 100% auto; left:-80px;}
 	.polite-title {font-size:30px;}
 	.polite-desc {padding-top: 25px;}
@@ -393,7 +395,15 @@
 	.sert-image {position: relative; width:35%; padding-left:0;}
 	.sert-text {width: 54%;}
 
-	.head ul {display: inline-block; width: 43%; padding-right:0%; padding-left:3%; margin-right: -4px; display: inline-block; vertical-align: top; margin-top: 38px;}
+	.head ul {
+		width: 100%;
+		margin-top: 38px;
+	}
+	.head ul li{
+		font-size: 13px;
+		line-height: 25px;
+		padding-bottom: 15px;
+	}
 
 	.facts {padding-top:43px; padding-bottom:30px;}
 	.facts h3 {font-size:25px; padding-bottom:19px;}
@@ -493,16 +503,15 @@
 	.service ul{padding: 0;font-size: 13px;}
 	.service ul li{padding-top: 15px;}
 	.service li:after{left: 15px;top: 24px;}
-	.service#cat1 .services__btn{text-align: center;}
 	.service .services__btn{margin-top: 35px;padding: 0;}
 
 	.service--grey .column--40{float: left;}
 	.service--grey .column--60{float: right;}
 	.service--white .column--53 {display: block; width: 100%;padding-left: 0;}
 	.service--white .column--40 {display: none;}
-	.service--head .column--60{width: 100%;text-align: center;}
+	.service--head .column--60{width: 100%;text-align: left;}
 	.service--head{padding: 0;}
-	.service--head h2{margin: 28px auto 0;}
+	.service--head h2{margin: 0; width: 100%;}
 	
 	.service--black .column--40{vertical-align: bottom;}
 
@@ -850,6 +859,7 @@
 	.serts-sert:last-of-type{padding-right: 5%;display: inline-block;}
 
 	.polite{height: auto;background-position: left top;}
+	.polite-content__wrap{position: relative;}
 	.polite-content{width: 100%;font-size: 14px;margin: 0;position: static;line-height: 1;}
 	.polite-title{font-size: 20px;line-height: 20px;font-weight: normal; margin-right: 50px;line-height: 26px;}
 	.polite-desc{  padding-top: 8px;font-size: 12px;line-height: 20px;}
@@ -862,10 +872,25 @@
 
 	.head{text-align: left; padding: 20px 0;}
 	.head h2, .head h2.title__h2_s2{text-align: left; font-size: 22px;padding-bottom: 10px; line-height: 30px;}
-	.head p{ font-size: 12px; line-height: 22px;margin-bottom: 20px;}
-	.head ul{width: 100%;padding-bottom: 0;margin: 0; padding-left: 25px;font-size: 12px;line-height: 22px;box-sizing: border-box;}
-	.head ul li{padding-right: 0;}
-	.head .button{margin: 0;}
+	.head p{
+		font-size: 12px;
+		line-height: 22px;
+		margin-bottom: 20px;
+	}
+	.head ul{
+		width: 100%;
+		padding-bottom: 0;
+		margin: 0;
+	}
+	.head ul li{
+		width: 100%;
+		padding-right: 0;
+		font-size: 12px;
+		line-height: 22px;
+	}
+	.head .button{
+		margin: 0;
+	}
 
 	.facts{padding: 20px 0;text-align: center;}
 	.facts h3{font-size: 18px;padding-bottom: 0;line-height: 20px;margin-top: 16px;margin-bottom: 12px;}
@@ -973,6 +998,9 @@
 	.prjsmain-cols .prjsmain-item{height: auto;}
 	.prj-item_gray{padding: 30px;}
 	.prj-item_pic .prjsmain__content{top: 30px;right: 30px;bottom: 30px;left: 30px;}
+
+	.prj-img{height: auto;line-height: 1;margin-bottom: 20px;}
+	.prj-img img{height: auto;max-width: 240px;}
 
 	.main-content{padding-top: 28px;padding-bottom: 50px;}
 	.main-content h2{padding: 0;font-size: 22px;line-height: 30px;margin-bottom: 20px;}
