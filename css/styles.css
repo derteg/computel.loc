@@ -682,8 +682,31 @@ h3 {
 }
 .slider {
   height: 645px;
+  padding: 0;
   position: relative;
   overflow: hidden;
+}
+.slider-item .inside {
+  height: 645px;
+}
+.slider-item--1 {
+  background: url(../img/pano.jpg) no-repeat center;
+  background-size: cover;
+}
+.slider-item--1 p {
+  max-width: 750px;
+  margin: 0 auto;
+}
+.slider-item--2 {
+  background: url(../img/pano-3.jpg) no-repeat center;
+  background-size: cover;
+}
+.slider-item--3 {
+  background: url(../img/pano-2.jpg) no-repeat center;
+  background-size: cover;
+}
+.slider-item--3 .slider-content {
+  max-width: 950px;
 }
 .slider-content {
   text-align: center;
