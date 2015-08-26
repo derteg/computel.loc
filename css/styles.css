@@ -1145,12 +1145,11 @@ h3 {
 .leftmenu ul li {font-size:13px; line-height:20px; display:block; font-weight: lighter; margin-bottom:1px; background: #f4f4f4; position: relative;}
 .leftmenu ul li:hover {background: #e8e8e8; }
 .leftmenu a {color:#000; padding:15px 30px 15px 25px; display:block; border:0; padding: 13px 30px 14px 25px; min-height:30px;}
-.leftmenu a:hover {/* */}
 
 
-.leftmenu ul .arrow {position: absolute; width: 0; content:' '; display:block; top:25px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid #b7b7b7; top: 28px; right: 20px;}
+.leftmenu ul .arrow {position: absolute; width: 0; content:' '; display:block; top:25px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid #b7b7b7;}
 .leftmenu ul li.active {background: #1796ca; margin-bottom:0;}
-.leftmenu ul li.active .arrow {position: absolute; width: 0; content:' '; display:block; top:18px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 4px solid #fff; border-top:0; top: 28px; right: 28px;}
+.leftmenu ul li.active .arrow {position: absolute; width: 0; content:' '; display:block; top:25px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 4px solid #fff; border-top:0;}
 .leftmenu .active a {color:#fff; /* background: #1796ca; */}
 
 .leftmenu ul ul, .leftmenu ul ul li, .leftmenu ul ul a {background: #168bbb; display:block;}
@@ -1168,7 +1167,7 @@ h3 {
 .leftmenu ul ul ul li {padding-bottom:12px;}
 .leftmenu ul ul ul li:last-child {padding-bottom:0;}
 .leftmenu ul ul ul {padding-bottom:0;}
-.leftmenu ul ul ul li a:hover, .leftmenu ul ul ul li a.active {color:#fff;}
+.leftmenu ul ul ul li a:hover, .leftmenu ul ul ul li a.active {color:#fff;}*/
 
 /* .leftmenu ul ul li:after, .leftmenu ul ul ul li:after {display:none !important;} */
 
@@ -1867,7 +1866,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 
 
 .tabs__title{display: none;}
-.tabs__list {position: relative; text-align: center; padding-bottom:35px; margin-top:-8px;}
+.tabs__list {position: relative; text-align: center; padding-bottom:15px; margin-top:-8px;}
 .tabs__item{display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin: 0 13px;color:#1896ca; border-bottom:1px dotted #1896ca; line-height:1em; font-size:12px;text-decoration: none;cursor: pointer;}
 .tabs__item:hover {color:#e15243; border-color:rgba(225, 83, 67, 0.3);}
 .tabs__item.active {border:0; color:#000000;cursor: default;}
@@ -1880,7 +1879,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 .paginator__lnk .ico { display: inline-block; vertical-align: middle; width: 6px; height: 12px; }
 
 .b-news{
-  margin-top: -50px;
+  margin-top: -20px;
   margin-bottom: 60px;
 }
 .b-news .paginator{
@@ -1954,7 +1953,10 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 .press-kit__text{
   font-size: 13px;
   line-height: 24px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+.press-kit__text + .press-kit__social{
+  margin-top: 20px;
 }
 
 .press-kit__user{
@@ -2499,6 +2501,10 @@ ul.history__tabs-list:after{
 }
 .error-page__info a:hover{
   border-color: transparent;
+}
+.error-page__info p{
+  font-size: 12px;
+  line-height: 22px;
 }
 .error-page__form{
   position: relative;
