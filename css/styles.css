@@ -693,10 +693,6 @@ h3 {
   background: url(../img/pano.jpg) no-repeat center;
   background-size: cover;
 }
-.slider-item--1 p {
-  max-width: 750px;
-  margin: 0 auto;
-}
 .slider-item--2 {
   background: url(../img/pano-3.jpg) no-repeat center;
   background-size: cover;
@@ -704,9 +700,6 @@ h3 {
 .slider-item--3 {
   background: url(../img/pano-2.jpg) no-repeat center;
   background-size: cover;
-}
-.slider-item--3 .slider-content {
-  max-width: 950px;
 }
 .slider-content {
   text-align: center;
@@ -737,6 +730,8 @@ h3 {
 .slider-content p {
   font-size: 18px;
   line-height: 34px;
+  width: 80%;
+  margin: 0 auto;
 }
 .slider-item {
   position: relative;
