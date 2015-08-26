@@ -443,8 +443,9 @@ $(function(){
 
 
 	function leftMenu(){
-		$('.leftmenu li').each(function(){
-				$(this).attr('data-level', ($(this).parents('ul').length));
+		var dataLevel;
+			$('.leftmenu li').each(function(){
+				dataLevel = $(this).attr('data-level', ($(this).parents('ul').length));
 			});
 			
 			
@@ -945,6 +946,7 @@ function clntsMenu(){
 			arrows: false,
 			dots: true,
 			swipe: false,
+			adaptiveHeight: true,
 			responsive: [
 				{
 					breakpoint: 1100,

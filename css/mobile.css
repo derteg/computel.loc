@@ -24,6 +24,15 @@
 /************** MAIN MENU START **************/
 
 @media (max-width: 960px){
+
+	.slick-dots li{
+		width: 8px;
+		height: 8px;
+	}
+	.slick-dots button{
+		width: 8px;
+		height: 8px;
+	}
 	
 	.mainmenu__btn {
 		display:inline-block;
@@ -339,6 +348,7 @@
 
 
 	.part {width:33%;} 
+	.part-image{height: 110px;line-height: 110px;}
 	.catmenu{display: none;}
 
 
@@ -422,13 +432,12 @@
 	.centers .numberredlist-number {width: 35px; height: 35px; line-height: 35px; font-size:14px; left:0;}
 	.centers ol {padding-top:20px;}
 
-	.vacations {padding-top: 40px; padding-bottom: 40px;}
-	.vacations .inside {background-size: 70% auto; background-position: right bottom}
+	.vacations .inside { background-position: left top;padding-top: 40px; padding-bottom: 40px;}
 	.vacations-content {width: 70%; font-size: 13px; line-height: 24px; padding-left: 0px; min-height: auto;}
 	.vacations ul {margin-top:40px; font-size:13px}
 	.vacations li {padding-bottom:15px;}
 
-	.vacations-inner{margin-top: 20px;padding: 0;}
+	.vacations-inner{padding: 0;}
 	.vacations-inner .vacations-content{padding-top: 42px;padding-bottom: 86px;}
 	.vacations-inner ul{padding-bottom: 0;margin-bottom: 35px;}
 
@@ -864,8 +873,15 @@
 	.polite-title{font-size: 20px;line-height: 20px;font-weight: normal; margin-right: 50px;line-height: 26px;}
 	.polite-desc{  padding-top: 8px;font-size: 12px;line-height: 20px;}
 
-	.vacations{padding: 20px 0;background-size: contain;}
-	.vacations.current { background-size: cover;background-position: 0 0;}*/
+	.vacations{
+		background: #fbfbfa url(../img/logos/face.jpg) no-repeat;
+		background-size: auto 100%;
+		background-position: 100% 100%;
+	}
+	.vacations .inside{background: none;}
+	.vacations-content{overflow: hidden;max-height: 112px;}
+	.vacations-inner .vacations-content{overflow: visible; max-height: none;}
+	.section_accord.current .vacations-content{max-height: 100%;}
 	.vacations h2{margin-bottom: 0;}
 	.vacations h2:after{display: none;}
 	.vacations h2 a{color: #000;border-bottom-color: #000; border-bottom-color: rgba(0,0,0,0.2);}
@@ -1060,9 +1076,10 @@
 	.service--black .service-text,.service--white .service-text{width: 100%;}
 	.service--grey .column--40{display: none;}
 	
-	.b-news{margin-top: -24px;margin-bottom: 8px;}
+	.b-news{margin-top: -24px;margin-bottom: 30px;}
 	.b-news__tabs-cont{margin-bottom:70px;}
-	.b-news__slider{margin-bottom: 0;}
+	.b-news__slider{margin-bottom: 80px;}
+	.b-news__slider .slick-dots{text-align: left;margin-top: 26px;}
 	.b-news__date{margin-bottom: 4px;}
 	.b-news__text{padding-top: 10px;font-size: 12px;}
 
@@ -1071,7 +1088,7 @@
 	.press-kit h2{line-height: 30px;font-size: 20px;}
 	.press-kit__user{width: 100%;margin-bottom: 0;padding-bottom: 38px;margin: 12px auto 0;}
 	.press-kit__pic{float: right;}
-	.press-kit__cont{float: left;}
+	.press-kit__cont{float: left;padding-left: 0;}
 	.press-kit__cont h4{font-size: 15px;}
 	.press-kit__content .docs{display: none;}
 	.press-kit__profile{margin-bottom: 20px;}
@@ -1181,9 +1198,9 @@
 	.contacts__accord-cont.metro,
 	.contacts__accord-cont.car{background: none;padding: 0;}
 	.contacts__accord-title{font-size: 20px;line-height: 30px;margin-bottom: 14px;padding: 0 15px;}
-	.contacts__accord-subtitle{padding: 0 15px;padding-bottom: 38px; }
+	.contacts__accord-subtitle{padding: 0 56px 38px; }
 	.contacts__accord-subtitle h6{font-size: 12px;line-height: 20px;margin-bottom: 26px;}
-	.contacts__accord-title .place{border: none;position: relative;}	
+	.contacts__accord-title .place{position: relative;}	
 
 
 	.contacts__accord-dropdown{background-color: #fff;}
