@@ -468,19 +468,25 @@ $(function(){
 				.end()
 					.find('ul')
 					.finish()
-					.slideUp();
+					.slideUp(function(){
+						$('body').animate({
+							scrollTop: $(this).parents('li').find('>a').offset().top
+						}, 300);
+					});
 			}
 			else {
 				element.addClass('active');
-				element.children('ul').slideDown(function(){
+				element
+					.children('ul')
+					.finish()
+					.slideDown(function(){
 					$('body').animate({
 						scrollTop: $(this).parent().find('>a').offset().top
-					});
+					}, 300);
 				});
 				element
 					.siblings('li')
 					.children('ul')
-					.finish()
 					.slideUp();
 				element.siblings('li').removeClass('active');
 				element.siblings('li').find('li').removeClass('active');
