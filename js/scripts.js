@@ -6,7 +6,7 @@ $(function(){
 	numberLists();
 	scrollpane();
 	dropDown();
-	setEqualHeights();
+	// setEqualHeights();
 
 	if($('.license a').length){
 		fancy();
@@ -303,24 +303,24 @@ $(function(){
 	
 	var tags = new Tags();
 	
-	function setEqualHeights() {	
-		var elements = [$('.js-height_adjust')], 
-				max = 0;
+	// function setEqualHeights() {	
+	// 	var elements = [$('.js-height_adjust')], 
+	// 			max = 0;
 		
-		for (var i = 0; i<elements.length; ++i) {
-			var $elements = elements[i];
-			max = 0;
+	// 	for (var i = 0; i<elements.length; ++i) {
+	// 		var $elements = elements[i];
+	// 		max = 0;
 			
-			$elements.removeAttr('style').each(function(){
-			if ($(this).height() > max) {max=$(this).height();}
-		  });
-		  $elements.height(max);
-		}
-	};
+	// 		$elements.removeAttr('style').each(function(){
+	// 		if ($(this).height() > max) {max=$(this).height();}
+	// 	  });
+	// 	  $elements.height(max);
+	// 	}
+	// };
 	
-	$(window).resize(function(){
-		setEqualHeights();
-	});
+	// $(window).resize(function(){
+	// 	setEqualHeights();
+	// });
 	
 	function fancy() {		
 		if (!$('.license a').length) {return false;}
@@ -435,8 +435,8 @@ $(function(){
 					PREVBLOCK.append(html).fadeIn('slow');
 					$('.js-height_adjust').heightAdjustment();
 					a.parent().hide();
-					}
-				});			
+				}
+			});			
 		  return false;
 		 });
 	}

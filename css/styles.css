@@ -800,8 +800,8 @@ h3 {
 }
 .prjsmain-cols {
   padding-top: 25px;
-  margin-left: -10px;
-  margin-right: -10px;
+  margin-left: -6px;
+  margin-right: -6px;
 }
 .prjsmain-item {
   position: relative;
@@ -1307,7 +1307,7 @@ a:hover .item-title {color:#e15243}
 .head .button {
 	margin-top:33px;
 }
-.head__cols{margin-bottom: 20px;margin-top: 34px;}
+.head__cols{margin-bottom: 0;margin-top: 34px;}
 .head__col{text-align: left; text-align: left; padding-right: 60px; box-sizing: border-box;}
 .head__col p{font-size: 13px;line-height: 24px;}
 
@@ -1319,9 +1319,9 @@ a:hover .item-title {color:#e15243}
 .parts {background: #f6f6f4; position: relative; padding-top:45px;padding-bottom: 40px;}
 .part {display: inline-block;vertical-align: top;*zoom: 1;*display: inline; width:20%; margin-right:-4px; text-align: center; margin-bottom:21px;}
 .part-link {display:block; width:85%; max-width: 200px; margin:0 auto; border:0;}
-.part-title {font-size:15px; line-height:22px; font-weight: bold; color:#000000; display:block; text-align: center; padding-bottom:3px;font-weight: normal;}
+.part-title {font-size:15px; line-height:22px; font-weight: bold; color:#000000; display:block; text-align: center; padding-bottom:3px;font-weight: normal;z-index: 10;position: relative;}
 .part-desc {font-size:12px; line-height:22px; color:#7d7d7d;}
-.part-image {position: relative; display:block; line-height:130px; height:130px;}
+.part-image {position: relative; display:block; line-height:130px; height:130px;overflow: hidden;}
 .part-image img {max-width:100%; height:auto; vertical-align: middle;}
 a:hover .part-title {color:#e15243}
 
@@ -1619,7 +1619,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 .learn-content .guote__text{color: #797979; font-size: 12px; padding-left: 40px; position: relative;}
 .learn-content .guote__text:before{content: ''; position: absolute; top: 10px; left: 0; width: 20px; height: 2px; background-color: #c8c8c6;}
 
-.other {position: relative; padding:45px 0 30px; text-align: center;}
+.other {position: relative; padding:45px 0 40px; text-align: center;}
 .other h3 {font-size:35px; line-height:45px; position: relative; font-weight: normal; padding-bottom: 25px; color:#000;}
 .other p {margin-bottom:20px; margin:0 auto; max-width: 700px; font-size:14px; line-height:28px;}
 .other-images {position: relative; padding: 20px 0;}
@@ -1630,7 +1630,7 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 
 .other-slider {
   margin-top: 40px;
-  margin-bottom: 80px;  
+  margin-bottom: 20px;  
 }
 .other-slider .slick-dots{
   margin-top: 40px;
@@ -1942,9 +1942,10 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
 }
 
 .press-kit__content{
-  padding-right: 110px;
+  padding-right: 20px;
   width: 60%;
   float: left;
+  position: relative;
   box-sizing: border-box;
 }
 .press-kit h2{
@@ -1954,6 +1955,10 @@ a:hover .file-name {color:#e15243; border-bottom:1px solid rgba(225, 83, 67, 0.3
   font-size: 13px;
   line-height: 24px;
   margin-bottom: 30px;
+  padding-right: 90px;
+}
+.press-kit__content .press-kit__social{
+  height: 45px;
 }
 .press-kit__text + .press-kit__social{
   margin-top: 20px;

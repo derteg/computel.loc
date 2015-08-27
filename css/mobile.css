@@ -25,6 +25,14 @@
 
 @media (max-width: 960px){
 
+	.head{padding: 20px 0;}
+	.head h2, .head h2.title__h2_s2{padding-bottom: 10px; line-height: 30px;}
+	.head p{
+		font-size: 12px;
+		line-height: 22px;
+		margin-bottom: 20px;
+	}
+
 	.slick-dots li{
 		width: 8px;
 		height: 8px;
@@ -484,7 +492,7 @@
 	.serts-content {margin-right: -14px; font-size:13px;}
 	.serts-content h2 {padding-bottom:18px;}
 
-	.prjcts {padding:35px 0; text-align: center; font-size:13px;}
+	.prjcts {padding:35px 0; font-size:13px;}
 	.prjcts form {text-align: left;}
 	.prjcts h2 {padding-bottom: 20px; font-size:30px; font-weight: normal;}
 	.srch {width:32%;}
@@ -529,11 +537,14 @@
 
 	.b-news__slider{margin: 16px 0 96px;}
 	.b-news__slider .slick-dots{margin-top: 46px;}
+	.b-news__slider + .center{
+  		text-align: left;
+	}
 
 
 	.press-kit{padding: 40px 0;text-align: left;}
 	.press-kit h2{font-size: 30px;font-weight: normal;margin-bottom: 18px;text-align: left;}
-	.press-kit__text{margin-bottom: 24px;}
+	.press-kit__text{margin-bottom: 24px;padding-right: 0;}
 	.press-kit__content{width: 100%;float: none;padding: 0;}
 	.press-kit__content .docs{position: absolute;left:50%; width: 40%;margin-top: 24px;}
 	.press-kit__content .press-kit__load-logo{display: none;}
@@ -545,6 +556,18 @@
 	.press-kit__pic{padding: 0;width: 30%;}
 	.press-kit__pic img{width: 100%; height: auto;}
 	.press-kit__cont{vertical-align: top;padding-left: 20px;width: 70%;max-width: 70%;padding-top: 10px;margin-left: -4px;box-sizing: border-box;}
+
+
+	.press-kit__content .press-kit__social{
+	    position: absolute;
+	    top: 100%;
+	    left: 50%;
+	    width: auto;
+	    height: 45px;
+	}
+	.press-kit__text + .press-kit__social{
+	  margin-top: 60px;
+	}
 
 	.news-inner{margin-top: -20px;margin-bottom: 20px;}
 	.news-inner_pic{margin-right: 30px;margin-bottom: 14px;}
@@ -558,7 +581,7 @@
 	.news-inner__content blockquote .caption{margin-top: 26px;}
 	.news-inner__content .caption p{font-size: 13px;}
 
-	.reference{padding: 28px 0 60px}
+	.reference{padding: 28px 0;}
 	.reference h2{font-size: 25px;font-weight: normal;}
 	.reference dl{margin-top: 20px;}
 	.reference dt{font-size: 13px;}
@@ -650,6 +673,7 @@
 	ul.tabs__list{text-align: left; display: none;background: #ffffff;box-shadow: 0 10px 26px rgba(0,0,0,0.15);padding: 0;margin-top: 0;max-height: 250px;overflow:hidden;margin: 0 auto;width: 40%;}
 	.tabs__item{display: block;margin: 0;padding: 6px 15px;border: none;line-height: inherit;}
 	.tabs__item:hover,.tabs__item:focus{color: #fff;background: #1796ca;}
+	.b-news{margin-top: 0;}
 	.b-news__tabs-cont{margin-top: 30px;}
 
 	.history__tabs{margin-top: 20px;}
@@ -989,7 +1013,7 @@
 	.other h3{font-size: 18px;line-height: 30px;padding-bottom: 18px;margin-top: 10px;}
 	.other p{font-size: 12px;line-height: 20px;margin-bottom: 20px;}
 	.other-images{display: none;}
-	.other-slider{margin-top: 34px;margin-bottom: 62px;}
+	.other-slider{margin-top: 34px;margin-bottom: 12px;}
 	.other-slider .slick-dots{margin-top: 30px;}
 
 	.tags{padding: 20px 0 0;}
@@ -1076,7 +1100,7 @@
 	.service--black .service-text,.service--white .service-text{width: 100%;}
 	.service--grey .column--40{display: none;}
 	
-	.b-news{margin-top: -24px;margin-bottom: 30px;}
+	.b-news{margin-top: -10px;margin-bottom: 30px;}
 	.b-news__tabs-cont{margin-bottom:70px;}
 	.b-news__slider{margin-bottom: 80px;}
 	.b-news__slider .slick-dots{text-align: left;margin-top: 26px;}
@@ -1096,6 +1120,25 @@
 	.press-kit__social .text{display: block; float: left;margin-top: 4px;width: 60%;}
 	.press-kit__social .social{float: right;width: 30%;text-align: center;}
 	.press-kit__social .social img{width: 80px;height: auto;}
+
+	.press-kit__content{position: static;}
+	.press-kit__content .press-kit__social{
+	    position: absolute;
+	    top: auto;
+	    bottom: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 45px;
+	}
+	.press-kit__content .press-kit__social .text{
+		width: auto;
+	}
+	.press-kit__text + .press-kit__social{
+	  margin-top: 0;
+	  padding: 0px 15px;
+	  width: 100%;
+	  box-sizing: border-box;
+	}
 
 	.news-inner{margin-top: -20px;margin-bottom: 0px;}
 	.news-inner_pic{margin-right: 0;}
@@ -1132,7 +1175,7 @@
 	.news__promo-content h2{font-size: 20px;line-height: 30px;text-align: left;margin-bottom: 18px;}
 	.news__promo-content .promo__text{font-size: 12px;line-height: 20px;margin-bottom: 25px;}
 	.news__promo-content .press-kit__load-logo{display: none;}
-	.news__promo .press-kit__load{width: auto;margin-bottom: 12px;}
+	.news__promo .press-kit__load{width: auto;margin-bottom: 12px;}	
 
 	.b-search{padding: 20px 0px 26px;}
 	.search__cell{width: 80%;}
