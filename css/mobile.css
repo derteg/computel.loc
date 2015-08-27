@@ -76,6 +76,11 @@
 	.mainmenu__item{
 		display:block;
 	}
+	.mainmenu__item.current .mainmenu__lnk{
+		color: #fff;
+		background-color: #0195cc;
+		margin-top: -1px;
+	}
 	.mainmenu__lnk{
 		display: block;
 		min-height: 70px;
@@ -108,9 +113,8 @@
 	}
 	.submenu__item a{
 		display: block;
-		padding: 0 30px;			
 		border: none;
-		padding: 14px 30px 14px;
+		padding: 14px 20px 14px;
 		color: #191919;
 		font-size: 13px;
 		line-height: 20px;
@@ -122,6 +126,10 @@
 	ul.mainmenu_expanded {
 		display: block;
 	}
+
+	/*.mainmenu li li.current a{
+		border-bottom: 1px solid #000;
+	}*/
 }
 
 /************** MAIN MENU END **************/

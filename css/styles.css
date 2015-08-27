@@ -461,7 +461,10 @@ h3 {
 	background-color: transparent;
   }
   .mainmenu__item:hover{
-	background-color: #1796ca;
+	 background-color: #1796ca;
+  }
+  .mainmenu__item.current{
+    
   }
   .mainmenu__lnk{
 	position: relative;

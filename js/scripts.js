@@ -460,18 +460,34 @@ $(function(){
 
 			if (!element.find('ul').length) {location.href = $(this).attr('href');}
 
-			if (element.hasClass('active')) {
-				element.removeClass('active');
-				element.find('li').removeClass('active');
-				element.find('ul').slideUp();
+			if (element.is('.active')) {
+				element
+					.removeClass('active')
+					.find('li')
+					.removeClass('active')
+				.end()
+					.find('ul')
+					.finish()
+					.slideUp();
 			}
 			else {
 				element.addClass('active');
-				element.children('ul').slideDown();
-				element.siblings('li').children('ul').slideUp();
+				element.children('ul').slideDown(function(){
+					$('body').animate({
+						scrollTop: $(this).parent().find('>a').offset().top
+					});
+				});
+				element
+					.siblings('li')
+					.children('ul')
+					.finish()
+					.slideUp();
 				element.siblings('li').removeClass('active');
 				element.siblings('li').find('li').removeClass('active');
-				element.siblings('li').find('ul').slideUp();
+				element
+					.siblings('li')
+					.find('ul')
+					.slideUp();
 			}
 		});
 	}
