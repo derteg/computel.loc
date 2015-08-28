@@ -514,8 +514,8 @@ $(function(){
 			flag = false;
 
 			$(window).on('load resize', function() {
-			    var wW = $(this).width();
-
+			    var wW = window.innerWidth;
+			    
 			    if(wW <= 960){
 			    	if(flag == true){
 			    		return;
