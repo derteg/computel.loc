@@ -8,7 +8,7 @@ $(function(){
 	dropDown();
 	// setEqualHeights();
 
-	if($('.license a').length){
+	if($('.license a, .js-fancy a').length){
 		fancy();
 	}
 	clients();
@@ -323,8 +323,14 @@ $(function(){
 	// });
 	
 	function fancy() {		
-		if (!$('.license a').length) {return false;}
-		$('.license a').fancybox();
+		// if (!$('.license a, .js-fancy a').length) {return false;}
+			$('.license a, .js-fancy .fancy__link').fancybox({
+				helpers: {
+				   overlay: {
+				     locked: false
+				   }
+				 }
+			});
 	};
 	
 	function clients() {		
