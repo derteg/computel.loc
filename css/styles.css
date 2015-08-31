@@ -966,6 +966,7 @@ h3 {
 .partners-item.slick-slide img {
   opacity: 0.5;
   width: 100%;
+  max-width: 133px;
   height: auto;
   max-height: 70px;
   vertical-align: middle;
