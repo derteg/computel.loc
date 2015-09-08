@@ -173,7 +173,9 @@ $(function(){
 			$lnk.removeClass('active');
 			that.addClass('active');
 			
-			$('body').animate({scrollTop: $(href).offset().top});
+			$('html,body').animate({
+				scrollTop: $(href).offset().top
+			});
 		});
 
 		$(window).on('scroll', function(){
