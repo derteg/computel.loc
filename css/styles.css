@@ -855,6 +855,12 @@ h3 {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+.lt-ie .prjsmain-pic,
+.lt-ie .prjsmain-item:hover .prjsmain-pic,
+.lt-ie .prj:hover .prjsmain-pic{
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
 .pr-label {
   position: absolute;
   top: 25px;
