@@ -1074,7 +1074,7 @@ h3 {
   font: 14px Verdana, Geneva, sans-serif;
   text-align: justify;
   line-height: 0;
-  font-size: 1px; /* 1px для Opera */
+  font-size: 0; /* 1px для Opera */
   text-justify: newspaper;
   zoom:1;
   text-align-last: justify; 
