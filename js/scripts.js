@@ -993,7 +993,7 @@ function clntsMenu(){
 					breakpoint: 1100,
 					settings: {
 						slidesToShow: 2,
-						slidesToScroll: 1,
+						slidesToScroll: 2,
 						swipe: true,
 					}
 				},
