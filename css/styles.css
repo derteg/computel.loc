@@ -1161,6 +1161,15 @@ h3 {
 .leftmenu ul li.active .arrow {position: absolute; width: 0; content:' '; display:block; top:25px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 4px solid #fff; border-top:0;}
 .leftmenu .active a {color:#fff; /* background: #1796ca; */}
 
+h2 a {
+  border-bottom: none;
+  color: #000000;
+}
+
+h2 a:hover {
+  color: #1896ca;
+}
+
 .leftmenu ul ul, .leftmenu ul ul li, .leftmenu ul ul a {background: #168bbb; display:block;}
 .leftmenu ul ul li {padding-bottom:15px; font-size:12px; line-height:18px;}
 .leftmenu ul ul li:hover {background: none;}
