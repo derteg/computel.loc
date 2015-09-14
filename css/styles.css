@@ -841,8 +841,8 @@ h3 {
 }
 .prjsmain-pic {
   position: relative;
-  min-height: 100%;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   display: block;
   box-sizing: border-box;
 }
