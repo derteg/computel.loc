@@ -1144,6 +1144,7 @@ h3 {
 .leftmenu ul .arrow {position: absolute; width: 0; content:' '; display:block; top:25px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid #b7b7b7;}
 .leftmenu ul .no-arrow .arrow{display: none;}
 .leftmenu ul li.active {background: #1796ca; margin-bottom:0;}
+.leftmenu ul li.active.no-arrow .arrow{display: none;}
 .leftmenu ul li.active .arrow {position: absolute; width: 0; content:' '; display:block; top:25px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 4px solid #fff; border-top:0;}
 .leftmenu .active a {color:#fff; /* background: #1796ca; */}
 
