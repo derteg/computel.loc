@@ -1147,6 +1147,7 @@ h3 {
 .leftmenu ul li.active.no-arrow .arrow{display: none;}
 .leftmenu ul li.active .arrow {position: absolute; width: 0; content:' '; display:block; top:25px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 4px solid #fff; border-top:0;}
 .leftmenu .active a {color:#fff; /* background: #1796ca; */}
+.leftmenu .active > a{border-bottom: none;}
 
 h2 a {
   border-bottom: none;
