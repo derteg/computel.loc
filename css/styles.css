@@ -1135,13 +1135,14 @@ h3 {
 .service-text {padding-top:30px; padding-bottom:30px;}
 
 
-.leftmenu {position: relative; display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin-right:-4px; width:18.4%;}
+.leftmenu {position: relative; display: inline-block;vertical-align: top;*zoom: 1;*display: inline; margin-right:-4px; width:220px;margin-left: -22px;}
 .leftmenu ul li {font-size:13px; line-height:20px; display:block; font-weight: lighter; margin-bottom:1px; background: #f4f4f4; position: relative;}
 .leftmenu ul li:hover {background: #e8e8e8; }
-.leftmenu a {color:#000; padding:15px 30px 15px 25px; display:block; border:0; padding: 13px 30px 14px 25px; min-height:30px;}
+.leftmenu a {color:#000; display:block; border:0; padding: 13px 30px 14px 30px; min-height:30px;}
 
 
 .leftmenu ul .arrow {position: absolute; width: 0; content:' '; display:block; top:25px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid #b7b7b7;}
+.leftmenu ul .no-arrow .arrow{display: none;}
 .leftmenu ul li.active {background: #1796ca; margin-bottom:0;}
 .leftmenu ul li.active .arrow {position: absolute; width: 0; content:' '; display:block; top:25px; right:23px; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 4px solid #fff; border-top:0;}
 .leftmenu .active a {color:#fff; /* background: #1796ca; */}

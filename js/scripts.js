@@ -459,6 +459,8 @@ $(function(){
 
 		$('li', cont).each(function(){
 			dataLevel = $(this).attr('data-level', ($(this).parents('ul').length));
+
+			if (!$(this).find('ul').length) {$(this).addClass('no-arrow')}
 		});
 		
 		$('li[data-level]>a', cont).on('click', function(event){
