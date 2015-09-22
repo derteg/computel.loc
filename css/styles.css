@@ -1164,7 +1164,7 @@ h2 a:hover {
 .leftmenu ul ul li a {padding:0; padding-top:0.3em; display:inline; border-bottom:1px solid #fff; border-bottom:1px solid rgba(255,255,255,0.4); background: none;}
 .leftmenu ul ul li a:hover {border-color:transparent;}
 .leftmenu ul ul {padding:21px 15px 15px 25px;}
-.leftmenu ul ul ul {padding-top:15px;}
+.leftmenu ul ul ul {padding-top:15px;padding-right: 0;}
 .leftmenu ul ul li.active {background: none;}
 
 .leftmenu ul ul li, .leftmenu ul ul li.active {margin-bottom:1px;}
